@@ -5,6 +5,10 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
 gem 'devise'
+# rake helper tasks
+gem 'limerick_rake'
+# administration interface
+gem 'activeadmin'
 
 
 # Gems used only for assets and not required
@@ -46,8 +50,6 @@ group :development do
   gem "heroku"
   # Generate haml views
   gem "haml-rails"
-  # rake helper tasks
-  gem 'limerick_rake'
 end
 
 group :development, :test do
