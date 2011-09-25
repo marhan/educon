@@ -27,10 +27,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-end
 
 group :development do
   gem 'rb-fsevent', :require => false
@@ -47,4 +43,9 @@ group :development, :test do
   gem "launchy"
   gem "factory_girl_rails"
   gem "database_cleaner"
+end
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
 end
