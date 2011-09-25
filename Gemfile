@@ -41,11 +41,6 @@ group :production do
 end
 
 group :development do
-  # guard file changes
-  gem 'rb-fsevent', :require => false
-  gem 'guard-rspec'
-  gem 'guard-cucumber'
-  gem 'guard-livereload'
   # deployment on heroku
   gem "heroku"
   # Generate haml views
@@ -54,6 +49,12 @@ end
 
 group :development, :test do
   gem "rspec-rails"
+  # guard file changes
+  gem 'rb-fsevent', :require => false
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-livereload'
+  gem "growl_notify"
 end
 
 group :test do
