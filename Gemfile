@@ -27,12 +27,23 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :production do
+  # heroku needs this for Rails 3.1 ...
+  # http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/
+  # env ARCHFLAGS="-arch x86_64" gem install pg -- with-pg-config=/opt/local/lib/postgresql90/bin/pg_config
+  gem "pg", "~> 0.11.0"
+  # Fix for javascript runtime problems on heroku
+  gem "therubyracer-heroku"
+end
 
 group :development do
+  # guard file changes
   gem 'rb-fsevent', :require => false
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'guard-livereload'
+  # deployment on heroku
+  gem "heroku"
 end
 
 group :development, :test do
