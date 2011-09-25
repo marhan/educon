@@ -47,16 +47,17 @@ group :development do
 end
 
 group :development, :test do
-  gem "fuubar"
   gem "rspec-rails"
-  gem "capybara"
-  gem "cucumber-rails"
-  gem "launchy"
-  gem "factory_girl_rails"
-  gem "database_cleaner"
 end
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem "fuubar"
+  # BDD
+  gem "factory_girl_rails"
+  gem "database_cleaner"
+  gem "cucumber-rails"
+  gem "capybara"
+  gem "launchy"
 end
