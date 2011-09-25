@@ -1,0 +1,1 @@
+# Educon [![Build Status](http://travis-ci.org/marhan/educon.png)](http://travis-ci.org/marhan/educon)
