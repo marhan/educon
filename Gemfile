@@ -46,6 +46,8 @@ group :development do
   gem "heroku"
   # Generate haml views
   gem "haml-rails"
+  # rake helper tasks
+  gem 'limerick_rake'
 end
 
 group :development, :test do
