@@ -1,0 +1,4 @@
+.flashes
+  - if flash.keys.any?
+    - flash.each do |type, message|
+      =content_tag :div, message, :class => "flash flash_#{type}"

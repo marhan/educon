@@ -45,6 +45,12 @@ module Educon
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version    = '1.0'
 
+    config.generators.stylesheet_engine = :scss
+
+    # load styles from compass gem
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/blueprint/stylesheets"
+
     #
     config.generators do |g|
       # don't generate RSpec tests for views and helpers
@@ -53,6 +59,15 @@ module Educon
       # style engines
       g.template_engine :haml
       g.stylesheet_engine = :scss
+    end
+
+    # Specific Layout for devise
+    config.to_prepare do
+      Devise::SessionsController.layout "logged_out"
+      Devise::RegistrationsController.layout proc { |controller| user_signed_in? ? "application" : "logged_out" }
+      Devise::ConfirmationsController.layout "logged_out"
+      Devise::UnlocksController.layout "logged_out"
+      Devise::PasswordsController.layout "logged_out"
     end
 
   end

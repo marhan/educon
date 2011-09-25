@@ -3,7 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'jquery-rails'
-gem "haml"
+gem 'haml'
+gem 'devise'
 
 
 # Gems used only for assets and not required

@@ -1,0 +1,20 @@
+!!! utf-8
+%html
+  %head
+    = render "shared/meta"
+    %body.logged_out
+
+      #wrapper
+
+        %header#header
+          = render "shared/header"
+
+        #content_wrapper
+          = render "shared/flashes"
+
+          #site_content
+            = yield
+
+        %footer#footer
+          = render "shared/footer"
+
