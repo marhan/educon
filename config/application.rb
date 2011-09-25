@@ -48,6 +48,7 @@ module Educon
     config.generators.stylesheet_engine = :scss
 
     # load styles from compass gem
+    # http://spin.atomicobject.com/2011/07/12/sass-sprockets-compass-with-rails-3-1/
     config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
     config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/blueprint/stylesheets"
 
