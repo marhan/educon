@@ -31,3 +31,20 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+group :development do
+  gem 'rb-fsevent', :require => false
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-livereload'
+end
+
+group :development, :test do
+  gem "fuubar"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "cucumber-rails"
+  gem "launchy"
+  gem "factory_girl_rails"
+  gem "database_cleaner"
+end
