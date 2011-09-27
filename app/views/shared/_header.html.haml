@@ -1,0 +1,17 @@
+.topbar
+  .topbar-inner
+    .container-fluid
+      %a.brand{:href => "/"} Educon
+      %ul.nav
+        %li.active
+          %a{:href => "#"} Home
+        %li
+          %a{:href => "#about"} About
+        %li
+          %a{:href => "#contact"} Contact
+        %li
+          = link_to 'Logout', destroy_user_session_path
+      %p.pull-right
+        Logged in as
+        %a{:href => edit_user_registration_path}
+          = current_user.email

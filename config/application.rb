@@ -49,8 +49,8 @@ module Educon
 
     # load styles from compass gem
     # http://spin.atomicobject.com/2011/07/12/sass-sprockets-compass-with-rails-3-1/
-    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
-    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/blueprint/stylesheets"
+    #config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
+    #config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/blueprint/stylesheets"
 
     #
     config.generators do |g|
@@ -64,11 +64,11 @@ module Educon
 
     # Specific Layout for devise
     config.to_prepare do
-      Devise::SessionsController.layout "logged_out"
-      Devise::RegistrationsController.layout proc { |controller| user_signed_in? ? "application" : "logged_out" }
-      Devise::ConfirmationsController.layout "logged_out"
-      Devise::UnlocksController.layout "logged_out"
-      Devise::PasswordsController.layout "logged_out"
+      Devise::SessionsController.layout "signed_out"
+      Devise::RegistrationsController.layout proc { |controller| user_signed_in? ? "application" : "signed_out" }
+      Devise::ConfirmationsController.layout "signed_out"
+      Devise::UnlocksController.layout "signed_out"
+      Devise::PasswordsController.layout "signed_out"
     end
 
   end

@@ -1,33 +1,52 @@
-#registration
+.page-header
+  %h1
+    Welcome
+    %small login with you're account data or register new, please
+.row
+  .span10
+    %h2
+      Register new
 
-  %h2 Register New
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
 
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
 
-    = devise_error_messages!
+      %fieldset
 
-    %fieldset.inputs
+        .clearfix
 
-      %ol
-        %li{:class => 'name required'}
-          = f.label :name
-          = f.text_field :name
+          = f.label :firstname, :for => 'xlInput'
+          .input
+            = f.text_field :firstname, :class => 'xlarge'
 
-        %li{:class => 'email required'}
-          = f.label :email
-          = f.email_field :email
+        .clearfix
+          = f.label :lastname, :for => 'xlInput'
+          .input
+            = f.text_field :lastname, :class => 'xlarge'
 
-        %li{:class => 'password required'}
-          = f.label :password
-          = f.password_field :password
+        .clearfix
+          = f.label :email, :for => 'xlInput'
+          .input
+            = f.text_field :email, :class => 'xlarge'
 
-        %li{:class => 'password required'}
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation
+        .clearfix
+          = f.label :password, :for => 'xlInput'
+          .input
+            = f.password_field :password
 
-    %fieldset.buttons
-      %ol
-        %li.commit
-          = f.submit "Register"
+        .clearfix
+          = f.label :password, :for => 'xlInput'
+          .input
+            = f.password_field :password_confirmation
+            %span.help-inline
+              password confirmation
 
-    = render :partial => "devise/shared/links"
+        .actions
+          = f.submit "Register", :class => 'btn primary'
+          %button{:type=>'reset', :class => 'btn'}
+            Reset
+
+  .span4
+    %h3
+      sidebar
+
