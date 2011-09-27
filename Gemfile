@@ -4,6 +4,7 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
+gem 'bootstrap-sass', '1.3.0'
 gem 'devise'
 # rake helper tasks
 gem 'limerick_rake'
