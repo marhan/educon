@@ -1,0 +1,35 @@
+#login
+
+  %h2 Login
+
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+
+    = devise_error_messages!
+
+    %fieldset.inputs
+
+      %ol
+        %li{:class => 'email required'}
+          = f.label :email
+          = f.email_field :email
+
+        %li{:class => 'password required'}
+          = f.label :password
+          = f.password_field :password
+
+        - if devise_mapping.rememberable?
+          %li{:class => 'optional'}
+            = f.check_box :remember_me
+            = f.label :remember_me
+
+
+
+
+    %fieldset.buttons
+      %ol
+        %li.commit
+          = f.submit "Sign in"
+
+
+    = render :partial => "devise/shared/links"
+
