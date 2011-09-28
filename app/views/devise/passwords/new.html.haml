@@ -1,21 +1,30 @@
-#password_forgotten
+.page-header
+  %h1
+    Forgot you're password?
+    %small login into you're account or reset you're password
+.row
+  .span10
+    %h2
+      Password Forgotten
 
-  %h2 Forgot your password?
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
 
-  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
 
-    = devise_error_messages!
+      %fieldset
 
-    %fieldset.input
-      %ol
-        %li
-          = f.label :email
-          = f.email_field :email
+        .clearfix
+          = f.label :email, :for => 'xlInput'
+          .input
+            = f.text_field :email, :class => 'xlarge'
 
-    %fieldset.buttons
-      %ol
-        %li.commit
-          = f.submit "Send me instructions"
+        .actions
+          = f.submit "Send me instructions", :class => 'btn primary'
+          %button{:type=>'reset', :class => 'btn'}
+            Reset
 
-
-    = render :partial => "devise/shared/links"
+  .span4
+    %h3
+      Alternatives
+    %p
+      = render :partial => "devise/shared/links"
