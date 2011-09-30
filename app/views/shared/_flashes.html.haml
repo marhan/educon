@@ -1,4 +1,7 @@
-.flashes
-  - if flash.keys.any?
-    - flash.each do |type, message|
-      =content_tag :div, message, :class => "flash flash_#{type}"
+- if flash.keys.any?
+  - flash.each do |type, message|
+    %div{:class => "alert-message #{@alert_type} fade in", :data => {"alert" => 'alert'}}
+      %a.close{:href => "#"} ×
+      %p
+        =content_tag :strong, type
+        =message
