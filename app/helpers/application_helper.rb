@@ -34,7 +34,8 @@ module ApplicationHelper
     "alert-message #{alert_class} fade in"
   end
 
-  def map_alert_class_name_for(flush_type)
+  def map_alert_class_name_for(type)
+    flush_type = type.to_s
     if flush_type == "success"
       return "success"
     elsif flush_type == "notice"
