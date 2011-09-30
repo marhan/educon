@@ -17,23 +17,21 @@ module ApplicationHelper
   end
 
 
-  def flash_messages
+  def create_flash_messages
     flash.each do |type, message|
-      alert_class = alert_class_name_for(type)
-      capture_haml do
-        haml_tag :div, :class => "alert-message #{alert_class} fade in", :data => {"alert" => 'alert'} do
-          haml_tag :a, :class => "close", :href => "#" do
-            "x"
-          end
-          haml_tag :p do
-            haml_tag :strong do
-              "type".capitalize.humanize
-            end
-            haml_tag :div do
-              "message"
-            end
-          end
-        end
+      alert_class = alert_class_name_for("alert")
+      create_flash_message(alert_class, type, message)
+    end
+  end
+
+  def create_flash_message(alert_class, type, message)
+    haml_tag(:div, {:class => "alert-message #{alert_class} fade in", :data => {"alert" => 'alert'}}) do
+      haml_tag(:a, {:class => "close", :href => "#"}) do
+        haml_concat "x"
+      end
+      haml_tag :p do
+        haml_tag :strong, type.capitalize.to_s
+        haml_tag :div, message.to_s
       end
     end
   end
