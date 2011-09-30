@@ -4,7 +4,7 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
-gem 'bootstrap-sass', '1.3.0'
+gem 'bootstrap-sass'
 gem 'devise'
 # rake helper tasks
 gem 'limerick_rake'
@@ -16,8 +16,8 @@ gem 'activeadmin'
 # in production environments by default.
 group :assets do
   gem 'compass'
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
 end
 
