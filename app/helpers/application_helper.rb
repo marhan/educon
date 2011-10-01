@@ -1,20 +1,30 @@
 module ApplicationHelper
 
-  def create_flash_messages
+  def get_devise_error_messages
+    return "" if resource.errors.empty?
+
+    messages = resource.errors.full_messages
+    sentence = I18n.t("errors.messages.not_saved",
+                      :count    => resource.errors.count,
+                      :resource => resource.class.model_name.human.downcase)
+
+    create_error_message(sentence, messages)
+  end
+
+  def get_flash_messages
     html = ""
     flash.each do |type, message|
-      alert_class         = map_alert_class_name_for(type)
-      flash_message_class = build_flash_element_classes_with(alert_class)
-      html << create_flash_message(flash_message_class, type, message)
+      class_name         = map_alert_class_name_for(type)
+      html << create_flash_message(class_name, type, message)
     end
     html
   end
 
   private
 
-  def create_flash_message(flash_message_class, type, message)
+  def create_flash_message(class_name, type, message)
     capture_haml do
-      haml_tag(:div, {:class => flash_message_class, :data => {"alert" => 'alert'}}) do
+      haml_tag(:div, {:class => "alert-message #{class_name} fade in", :data => {"alert" => 'alert'}}) do
         haml_tag(:a, {:class => "close", :href => "#"}) do
           haml_concat "x"
         end
@@ -30,8 +40,26 @@ module ApplicationHelper
     end
   end
 
-  def build_flash_element_classes_with(alert_class)
-    "alert-message #{alert_class} fade in"
+  def create_error_message(sentence, messages)
+    capture_haml do
+      haml_tag(:div, {:class => "alert-message block-message error fade in", :data => {"alert" => 'alert'}}) do
+        haml_tag(:a, {:class => "close", :href => "#"}) do
+          haml_concat "x"
+        end
+        haml_tag(:div) do
+          haml_tag(:strong) do
+            haml_concat sentence
+          end
+        end
+        haml_tag(:ul) do
+          messages.map { |msg|
+            haml_tag(:li) do
+              haml_concat msg
+            end
+          }
+        end
+      end
+    end
   end
 
   def map_alert_class_name_for(type)

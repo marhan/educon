@@ -4,8 +4,12 @@
     = render "shared/meta"
     %body
       = render "shared/header"
-      .container-fluid
-        = render :partial => "shared/flashes"
-        = yield
-      = render "shared/footer"
+      .container
+
+        .content
+          = render :partial => "shared/flashes"
+          = yield
+
+        %footer
+          = render "shared/footer"
 
