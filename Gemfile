@@ -50,11 +50,12 @@ end
 
 group :development, :test do
   gem "rspec-rails"
-  # guard file changes
+  # guard test helper
   gem 'rb-fsevent', :require => false
+  gem 'spork'
+  gem 'guard-spork'
   gem 'guard-rspec'
   gem 'guard-cucumber'
-  gem 'guard-livereload'
   gem "growl_notify"
 end
 

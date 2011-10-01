@@ -1,1 +1,6 @@
 --colour
+--drb
+
+# notice
+#spork -p 5555
+#rspec spec --colour --drb --drb-port 5555
