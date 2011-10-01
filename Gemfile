@@ -52,7 +52,7 @@ group :development, :test do
   gem "rspec-rails"
   # guard test helper
   gem 'rb-fsevent', :require => false
-  gem 'spork'
+  gem 'spork', '~> 0.9.0.rc'
   gem 'guard-spork'
   gem 'guard-rspec'
   gem 'guard-cucumber'
