@@ -5,14 +5,10 @@
       .container-fluid
         %a.brand{:href => "/"} Educon
         %ul.nav
-          %li.active
-            %a{:href => "/"} Home
-          %li
-            %a{:href => "#about"} About
-          %li
-            %a{:href => "#contact"} Contact
-          %li
-            = link_to 'Logout', destroy_user_session_path
+          = get_top_bar_menu_item('Home', root_path)
+          = get_top_bar_menu_item('Site 1', "http://google.de")
+          = get_top_bar_menu_item('About', "http://google.de")
+          = get_top_bar_menu_item('Sign out', destroy_user_session_path)
         %p.pull-right
           Signed in as 
           %a{:href => edit_user_registration_path, :id => "Edit Account"}
@@ -25,12 +21,9 @@
       .container
         %a.brand{:href => "/"} Educon
         %ul.nav
-          %li.active
-            %a{:href => "/"} Home
-          %li
-            %a{:href => new_user_registration_path} Sign up
-          %li
-            %a{:href => "#"} About
+          = get_top_bar_menu_item('Home', root_path)
+          = get_top_bar_menu_item('About', "http://google.de")
+          = get_top_bar_menu_item('Sign up', new_user_registration_path)
 
         = form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => { :class => "pull-right"}) do |f|
           = f.email_field :email, :class => 'input-medium', :placeholder => 'Email'
