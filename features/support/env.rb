@@ -1,7 +1,7 @@
 require 'rubygems'
-require 'spork'
 
-Spork.prefork do
+# 
+def prefork
   ENV["RAILS_ENV"] ||= "test"
   require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 
@@ -11,12 +11,11 @@ Spork.prefork do
   require 'rspec/rails'
   require 'cucumber/rails/rspec'
 
-
   Capybara.default_selector = :css
 end
 
-Spork.each_run do
-
+#
+def each_run
   ActionController::Base.allow_rescue               = false
   Cucumber::Rails::World.use_transactional_fixtures = true
 
@@ -25,5 +24,21 @@ Spork.each_run do
   rescue NameError
     raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
   end
-
 end
+
+# Configuration for Travis-CI
+if ENV['TRAVIS']
+  prefork()
+  each_run()
+else
+  require 'spork'
+  Spork.prefork do
+    prefork()
+  end
+  Spork.each_run do
+    each_run()
+  end
+end
+
+
+
