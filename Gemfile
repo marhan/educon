@@ -6,8 +6,6 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'bootstrap-sass'
 gem 'devise'
-# rake helper tasks
-gem 'limerick_rake'
 # administration interface
 gem 'activeadmin'
 
