@@ -1,44 +1,50 @@
 require 'rubygems'
 
-def prefork
-  ENV["RAILS_ENV"] ||= 'test'
+ENV["RAILS_ENV"] ||= 'test'
+
+def configure
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+
   ActiveSupport::Dependencies.clear
   ActiveRecord::Base.instantiate_observers
-end
-
-def each_run
-  FactoryGirl.factories.clear
-  Dir[Rails.root.join("spec/factories/**/*.rb")].each { |f| load f }
-  Educon::Application.reload_routes!
 
   RSpec.configure do |config|
     config.mock_with :rspec
-    config.fixture_path               = "#{::Rails.root}/s pec/fixtures "
+    config.fixture_path               = "#{::Rails.root}/spec/fixtures"
     config.use_transactional_fixtures = true
     config.include Haml::Helpers
     config.include ActionView::Helpers
-    config.before(:each) do
+
+    config.before :suite do
+      DatabaseCleaner.strategy = :truncation
+      DatabaseCleaner.clean_with :truncation
+    end
+
+    config.before :each do
+      DatabaseCleaner.start
       init_haml_helpers
+    end
+
+    config.after :each do
+      DatabaseCleaner.clean
     end
   end
 end
 
-# Configuration for Travis-CI
-if ENV['TRAVIS']
-  prefork()
-  each_run()
+def run
+  Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+  FactoryGirl.factories.clear
+  Dir[Rails.root.join("spec/factories/**/*.rb")].each { |f| load f }
+  Educon::Application.reload_routes!
+end
+
+if defined?(Spork)
+  Spork.prefork { configure }
+  Spork.each_run { run }
 else
-  require 'spork'
-  Spork.prefork do
-    prefork()
-  end
-  Spork.each_run do
-    each_run()
-  end
-  
+  configure
+  run
 end
 
 

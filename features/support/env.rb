@@ -1,8 +1,8 @@
 require 'rubygems'
 
-# 
-def prefork
-  ENV["RAILS_ENV"] ||= "test"
+ENV["RAILS_ENV"] ||= "test"
+
+def configure
   require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 
   require 'cucumber'
@@ -12,12 +12,11 @@ def prefork
   require 'cucumber/rails/rspec'
 
   Capybara.default_selector = :css
-end
-
-#
-def each_run
   ActionController::Base.allow_rescue               = false
   Cucumber::Rails::World.use_transactional_fixtures = true
+end
+
+def run
 
   begin
     DatabaseCleaner.strategy = :truncation
@@ -26,18 +25,13 @@ def each_run
   end
 end
 
-# Configuration for Travis-CI
-if ENV['TRAVIS']
-  prefork()
-  each_run()
+
+if defined?(Spork)
+  Spork.prefork { configure }
+  Spork.each_run { run }
 else
-  require 'spork'
-  Spork.prefork do
-    prefork()
-  end
-  Spork.each_run do
-    each_run()
-  end
+  configure
+  run
 end
 
 
