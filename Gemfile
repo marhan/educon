@@ -48,16 +48,6 @@ end
 
 group :development, :test do
   gem "rspec-rails"
-  # guard test helper
-  gem 'rb-fsevent', :require => false
-  gem 'spork', '~> 0.9.0.rc'
-  gem 'guard-spork'
-  gem 'guard-rspec'
-  gem 'guard-cucumber'
-  gem "growl_notify"
-end
-
-group :test do
   # Pretty printed test output
   gem 'turn', :require => false
   gem "fuubar"
@@ -67,4 +57,15 @@ group :test do
   gem "cucumber-rails"
   gem "capybara"
   gem "launchy"
+
+  # you don't need guard to test on travis
+  unless ENV['TRAVIS']
+    gem 'rb-fsevent', :require => false
+    gem 'spork', '~> 0.9.0.rc'
+    gem 'guard-spork'
+    gem 'guard-rspec'
+    gem 'guard-cucumber'
+    gem "growl_notify"
+  end
 end
+
