@@ -4,12 +4,14 @@ Feature: Edit User
   so I can change my username
 
     Scenario: I sign in and edit my account
-      Given I am a user named "foo" with an email "user@test.com" and password "please"
+      Given I am a user named "foo" "bar" with an email "user@test.com" and password "please"
       When I sign in as "user@test.com/please"
       Then I should be signed in
-      When I follow "edit_account"
-      And I fill in "Name" with "baz"
+      When I follow "Edit Account"
+      And I fill in "Firstname" with "foz"
+      And I fill in "Lastname" with "baz"
+      And I fill in "Email" with "foz.baz@test.com"
       And I fill in "Current password" with "please"
-      And I press "Update"
+      And I press "Save"
       And I go to the homepage
-      Then I should see "User: baz"
+      Then I should see "Signed in as foz.baz@test.com"

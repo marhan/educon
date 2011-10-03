@@ -21,7 +21,7 @@ Spork.each_run do
   Cucumber::Rails::World.use_transactional_fixtures = true
 
   begin
-    DatabaseCleaner.strategy = :truncation, {:except => %w[users asn_slash_codes asn_order_statuses cdf_binding_codes po_statuses po_types poa_statuses poa_types products variants line_items orders]}
+    DatabaseCleaner.strategy = :truncation
   rescue NameError
     raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
   end

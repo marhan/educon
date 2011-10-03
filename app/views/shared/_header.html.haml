@@ -1,17 +1,39 @@
-.topbar
-  .topbar-inner
-    .container-fluid
-      %a.brand{:href => "/"} Educon
-      %ul.nav
-        %li.active
-          %a{:href => "/"} Home
-        %li
-          %a{:href => "#about"} About
-        %li
-          %a{:href => "#contact"} Contact
-        %li
-          = link_to 'Logout', destroy_user_session_path
-      %p.pull-right
-        Logged in as
-        %a{:href => edit_user_registration_path}
-          = current_user.email
+- if user_signed_in?
+
+  .topbar
+    .topbar-inner
+      .container-fluid
+        %a.brand{:href => "/"} Educon
+        %ul.nav
+          %li.active
+            %a{:href => "/"} Home
+          %li
+            %a{:href => "#about"} About
+          %li
+            %a{:href => "#contact"} Contact
+          %li
+            = link_to 'Logout', destroy_user_session_path
+        %p.pull-right
+          Signed in as 
+          %a{:href => edit_user_registration_path, :id => "Edit Account"}
+            = current_user.email
+
+- else
+
+  .topbar
+    .fill
+      .container
+        %a.brand{:href => "/"} Educon
+        %ul.nav
+          %li.active
+            %a{:href => "/"} Home
+          %li
+            %a{:href => new_user_registration_path} Sign up
+          %li
+            %a{:href => "#"} About
+
+        = form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => { :class => "pull-right"}) do |f|
+          = f.email_field :email, :class => 'input-medium', :placeholder => 'Email'
+          = f.password_field :password, :class => 'input-medium', :placeholder => 'Password'
+          %button.btn{:type => "submit"} Sign in
+          = devise_error_messages!

@@ -1,1 +1,55 @@
-= render :partial => "devise/shared/login"
+.page-header
+  = render :partial => "shared/flashes"
+  %h1
+    Welcome
+    %small sign into you're account or sign up
+.row
+  .span10
+    %h2
+      Sign up
+
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+
+      = get_devise_error_messages
+
+      %fieldset
+
+        .clearfix
+
+          = f.label :firstname, :for => 'xlInput'
+          .input
+            = f.text_field :firstname, :class => 'xlarge', :id => 'Firstname'
+
+        .clearfix
+          = f.label :lastname, :for => 'xlInput'
+          .input
+            = f.text_field :lastname, :class => 'xlarge', :id => 'Lastname'
+
+        .clearfix
+          = f.label :email, :for => 'xlInput'
+          .input
+            = f.text_field :email, :class => 'xlarge', :id => 'Email'
+
+        .clearfix
+          = f.label :password, :for => 'xlInput'
+          .input
+            = f.password_field :password, :id => 'Password'
+
+        .clearfix
+          = f.label :password, :for => 'xlInput'
+          .input
+            = f.password_field :password_confirmation, :id => 'Password confirmation'
+            %span.help-inline
+              password confirmation
+
+        .actions
+          = f.submit "Register", :class => 'btn primary'
+          %button{:type=>'reset', :class => 'btn'}
+            Reset
+
+  .span4
+    %h3
+      Alternatives
+    %p
+      = render :partial => "devise/shared/links"
+
