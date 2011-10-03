@@ -11,7 +11,7 @@ Given /^I am a user named "([^"]*)" "([^"]*)" with an email "([^"]*)" and passwo
 end
 
 Then /^I should be already signed in$/ do
-  And %{I should see "Logout"}
+  And %{I should see "Sign out"}
 end
 
 Given /^I am signed up as "(.*)\/(.*)"$/ do |email, password|
@@ -29,16 +29,16 @@ Then /^I sign out$/ do
   visit('/users/sign_out')
 end
 
-Given /^I am logout$/ do
+Given /^I am signed out/ do
   Given %{I sign out}
 end
 
-Given /^I am not logged in$/ do
+Given /^I am not signed in$/ do
   Given %{I sign out}
 end
 
 When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
-  Given %{I am not logged in}
+  Given %{I am not signed in}
   When %{I go to the sign in page}
   And %{I fill in "user_email" with "#{email}"}
   And %{I fill in "user_password" with "#{password}"}
@@ -56,5 +56,5 @@ end
 Then /^I should be signed out$/ do
   And %{I should see "Sign up"}
   And %{I should see "Sign in"}
-  And %{I should not see "Logout"}
+  And %{I should not see "Sign out"}
 end
