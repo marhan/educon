@@ -8,12 +8,13 @@ gem 'bootstrap-sass'
 gem 'devise'
 # administration interface
 gem 'activeadmin'
-
+# moved out of assets, due active admin init probems
+# http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
+gem 'sass-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'compass'
-  gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
 end
