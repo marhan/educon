@@ -59,3 +59,14 @@ html.signed_in {
         margin: -20px -20px 20px;
         padding: 20px 20px 10px; }
 }
+
+ul.impressum {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+        display: block;
+        float: left;
+        padding-right: 10px;
+    }
+}

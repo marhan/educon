@@ -1,32 +1,23 @@
-- if user_signed_in?
+.topbar
+  .fill
+    .container
+      %a.brand{:href => "/"} Educon
 
-  .topbar
-    .topbar-inner
-      .container-fluid
-        %a.brand{:href => "/"} Educon
+      - if user_signed_in?
+
         %ul.nav
           = get_top_bar_menu_item('Home', root_path)
-          = get_top_bar_menu_item('Site 1', "http://google.de")
-          = get_top_bar_menu_item('About', "http://google.de")
           = get_top_bar_menu_item('Sign out', destroy_user_session_path)
         %p.pull-right
-          Signed in as 
+          Signed in as
           %a{:href => edit_user_registration_path, :id => "Edit Account"}
             = current_user.email
 
-- else
+      - else
 
-  .topbar
-    .fill
-      .container
-        %a.brand{:href => "/"} Educon
         %ul.nav
           = get_top_bar_menu_item('Home', root_path)
-          = get_top_bar_menu_item('About', "http://google.de")
           = get_top_bar_menu_item('Sign up', new_user_registration_path)
+        = render "devise/menu/login_item"
 
-        = form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => { :class => "pull-right"}) do |f|
-          = f.email_field :email, :class => 'input-medium', :placeholder => 'Email'
-          = f.password_field :password, :class => 'input-medium', :placeholder => 'Password'
-          %button.btn{:type => "submit"} Sign in
-          = devise_error_messages!
+        = render "shared/github_ribbon"

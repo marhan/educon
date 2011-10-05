@@ -1,6 +1,8 @@
 Educon::Application.routes.draw do
 
-  get "pages/index"
+  get "users/home"
+  get "pages/about"
+  get "pages/impressum"
 
   ActiveAdmin.routes(self)
 
@@ -8,10 +10,10 @@ Educon::Application.routes.draw do
 
   devise_for :users
 
-  match '/home', :to => 'pages#home'
+  match '/home', :to => 'users#home'
+  match '/impressum', :to => 'pages#impressum'
+  match '/about', :to => 'pages#about'
 
-  match '/index', :to => 'pages#index'
-
-  root :to => 'pages#home'
+  root :to => 'users#home'
 
 end

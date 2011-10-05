@@ -1,1 +1,6 @@
-%p © Markus Hanses 2011
+%ul.impressum
+  %li
+    = link_to "Impressum", impressum_path
+
+  %li
+    = mail_to "markus@markushanses.de", "Contact me", :replace_at => "_at_", :replace_dot => "_dot_", :class => "email"

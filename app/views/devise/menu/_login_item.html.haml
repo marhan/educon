@@ -1,0 +1,5 @@
+= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => { :class => "pull-right"}) do |f|
+  = f.email_field :email, :class => 'input-medium', :placeholder => 'Email'
+  = f.password_field :password, :class => 'input-medium', :placeholder => 'Password'
+  %button.btn{:type => "submit"} Sign in
+  = devise_error_messages!
