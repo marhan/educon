@@ -68,6 +68,7 @@ group :development, :test do
     gem 'guard-spork'
     gem 'guard-rspec'
     gem 'guard-cucumber'
+    gem 'guard-bundler'
     gem "growl_notify"
   end
 end

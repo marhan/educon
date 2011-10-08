@@ -6,7 +6,6 @@ ENV["RAILS_ENV"] ||= 'test'
 def configure
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  #require 'database_cleaner'
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -19,9 +18,9 @@ def configure
   RSpec.configure do |config|
     config.mock_with :rspec
     config.use_transactional_fixtures = true
-    # Controller Macros
+    # Controller 
     config.extend ControllerMacros, :type => :controller
-    # HAML Helper
+    # For ApplicationHelper_Specs -> HAML Helper Methods
     config.include Haml, :type => :helper
     config.include Haml::Helpers, :type => :helper
     config.before(:each, :type => :helper) do |config|
