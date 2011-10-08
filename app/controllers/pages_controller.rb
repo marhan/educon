@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
-
-  def impressum
-  end
-
-  def about
+  
+  def welcome
   end
 
 end

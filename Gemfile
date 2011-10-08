@@ -1,16 +1,27 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
+
+# style
 gem 'bootstrap-sass'
+
+# avoiding version 1.3.4
+# http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
+gem 'rack', '1.3.3'
+
+# login
 gem 'devise'
+
 # administration interface
 gem 'activeadmin'
+
 # moved out of assets, due active admin init probems
 # http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
 gem 'sass-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -41,9 +52,9 @@ group :development, :test do
   gem "rspec-rails"
   # Pretty printed test output
   gem 'turn', :require => false
-  gem "fuubar"
+  #gem "fuubar"
   # BDD
-  gem "factory_girl_rails"
+  gem "factory_girl_rails", ">= 1.2"
   gem "database_cleaner"
   gem "cucumber-rails"
   gem "capybara"
@@ -51,6 +62,7 @@ group :development, :test do
 
   # you don't need guard to test on travis
   unless ENV['TRAVIS']
+    gem 'pry'
     gem 'rb-fsevent', :require => false
     gem 'spork', '~> 0.9.0.rc'
     gem 'guard-spork'

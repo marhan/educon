@@ -1,42 +1,6 @@
 @import "bootstrap";
 
-html.signed_out {
-    background-color: #EEEEEE;
-
-    body {
-        background-color: #EEEEEE;
-        padding-top: 40px; }
-
-    .container {
-        > footer p {
-        text-align: center; }}
-
-    .content {
-        background-color: #FFFFFF;
-        border-radius: 0 0 6px 6px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-        margin: 0 -20px;
-        padding: 20px; }
-
-    .page-header {
-        background-color: #F5F5F5;
-        margin: -20px -20px 20px;
-        padding: 20px 20px 10px; }
-
-    .content {
-        .span10 {
-            min-height: 500px; }
-        .span4 {
-            min-height: 500px;
-            border-left: 1px solid #EEEEEE;
-            margin-left: 0;
-            padding-left: 19px; } }
-
-    .topbar .btn {
-        border: 0 none; }
-}
-
-html.signed_in {
+html {
     background-color: #EEEEEE;
 
     body {
@@ -48,6 +12,7 @@ html.signed_in {
         text-align: center;}}
 
     .content {
+        min-height: 500px;
         background-color: #FFFFFF;
         border-radius: 0 0 6px 6px;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);

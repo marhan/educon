@@ -54,21 +54,14 @@ module Educon
 
     #
     config.generators do |g|
+      #g.test_framework :rspec, :fixture => true
+      #g.fixture_replacement :factory_girl, :dir => 'spec/factories'
       # don't generate RSpec tests for views and helpers
       g.view_specs false
       g.helper_specs false
       # style engines
       g.template_engine :haml
       g.stylesheet_engine = :scss
-    end
-
-    # Specific Layout for devise
-    config.to_prepare do
-      Devise::SessionsController.layout "signed_out"
-      Devise::RegistrationsController.layout proc { |controller| user_signed_in? ? "application" : "signed_out" }
-      Devise::ConfirmationsController.layout "signed_out"
-      Devise::UnlocksController.layout "signed_out"
-      Devise::PasswordsController.layout "signed_out"
     end
 
   end

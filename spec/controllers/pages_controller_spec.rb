@@ -2,18 +2,27 @@ require 'spec_helper'
 
 describe PagesController do
 
-  describe "GET 'impressum'" do
-    it "should be successful" do
-      get 'impressum'
-      response.should be_success
+  describe "With user signed in" do
+    signin_user
+
+    describe "GET 'welcome'" do
+
+      it "should should be successful" do
+        get :welcome
+        response.should be_success
+      end
     end
   end
 
-    describe "GET 'about'" do
-    it "should be successful" do
-      get 'about'
-      response.should be_success
+  describe "Without user signed in" do
+
+    describe "GET 'welcome'" do
+
+      it "should should be successful" do
+        get :welcome
+        response.should be_success
+      end
+
     end
   end
-
 end
