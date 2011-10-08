@@ -110,6 +110,8 @@ GEM
     guard-cucumber (0.7.2)
       cucumber (>= 0.10)
       guard (>= 0.8.3)
+    guard-migrate (0.0.2)
+      guard (>= 0.2.2)
     guard-rspec (0.4.5)
       guard (>= 0.4.0)
     guard-spork (0.3.0)
@@ -265,6 +267,7 @@ DEPENDENCIES
   growl_notify
   guard-bundler
   guard-cucumber
+  guard-migrate
   guard-rspec
   guard-spork
   haml
