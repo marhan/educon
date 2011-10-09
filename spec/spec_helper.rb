@@ -1,4 +1,6 @@
-# encoding: utf-8 
+require 'simplecov'
+SimpleCov.start 'rails'
+
 require 'rubygems'
 
 ENV["RAILS_ENV"] ||= 'test'

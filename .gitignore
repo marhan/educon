@@ -5,6 +5,7 @@ log/*.log
 tmp/
 .sass-cache/
 vendor/ruby
+coverage
 
 # IDE
 .idea

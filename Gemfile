@@ -4,20 +4,15 @@ gem 'rails', '3.1.1'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
-
-# style
+# styles
 gem 'bootstrap-sass'
-
 # avoiding version 1.3.4
 # http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
 gem 'rack', '1.3.3'
-
-# login
+# authentication
 gem 'devise'
-
 # administration interface
 gem 'activeadmin'
-
 # moved out of assets, due active admin init probems
 # http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
 gem 'sass-rails'
@@ -46,13 +41,14 @@ group :development do
   gem "heroku"
   # Generate haml views
   gem "haml-rails"
+  # better rails console
+  gem 'pry'
 end
 
 group :development, :test do
   gem "rspec-rails"
   # Pretty printed test output
   gem 'turn', :require => false
-  gem "fuubar"
   # BDD
   gem "factory_girl_rails", ">= 1.2"
   gem "database_cleaner"
@@ -62,7 +58,6 @@ group :development, :test do
 
   # you don't need guard to test on travis
   unless ENV['TRAVIS']
-    gem 'pry'
     gem 'rb-fsevent', :require => false
     gem 'spork', '~> 0.9.0.rc'
     gem 'guard-spork'
@@ -71,6 +66,9 @@ group :development, :test do
     gem 'guard-bundler'
     gem 'guard-migrate'
     gem "growl_notify"
+    # metrics
+    gem 'metrical'
+    gem "simplecov", :require => false
   end
 end
 
