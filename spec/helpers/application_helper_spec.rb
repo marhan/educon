@@ -2,12 +2,6 @@ require 'spec_helper'
 
 describe ApplicationHelper do
 
-  before :each do
-    helper.extend Haml
-    helper.extend Haml::Helpers
-    helper.send :init_haml_helpers
-  end
-
   describe "flash message helper methods" do
 
     it "should map flash type to twitter bootstrap class correctly" do

@@ -52,7 +52,7 @@ group :development, :test do
   gem "rspec-rails"
   # Pretty printed test output
   gem 'turn', :require => false
-  #gem "fuubar"
+  gem "fuubar"
   # BDD
   gem "factory_girl_rails", ">= 1.2"
   gem "database_cleaner"

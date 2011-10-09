@@ -2,13 +2,36 @@ require 'spec_helper'
 
 describe UsersController do
 
-  describe "GET 'home' with user signed in" do
+  describe "with user signed IN" do
 
     signin_user
 
-    it "should be successful" do
-      get 'home'
-      response.should be_success
+    describe "request get 'home'" do
+
+      before { get :home }
+
+      it "should be successful" do
+        response.should be_success
+      end
+
+      it "should render view 'home'" do
+        response.should render_template(:home)
+      end
+
+    end
+
+  end
+
+  describe "with user signed OUT" do
+
+    describe "request get 'home'" do
+
+      before { get :home }
+
+      it "should NOT be successful" do
+        response.should_not be_success
+      end
+
     end
 
   end
