@@ -1,5 +1,7 @@
-require 'simplecov'
-SimpleCov.start 'rails'
+unless ENV['TRAVIS']
+  require 'simplecov'
+  SimpleCov.start 'rails'
+end
 
 require 'rubygems'
 
@@ -13,7 +15,7 @@ def configure
 
   ActiveSupport::Dependencies.clear
   ActiveRecord::Base.instantiate_observers
-  
+
   DatabaseCleaner.strategy = :truncation
   DatabaseCleaner.clean_with :truncation
 
