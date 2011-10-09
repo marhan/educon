@@ -10,7 +10,6 @@ ActiveAdmin::Dashboards.build do
 
   section "Sidebar Demo", :priority => 2 do
     div do
-      
     end
   end
 

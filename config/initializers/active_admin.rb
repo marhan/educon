@@ -7,7 +7,7 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Educon"
 
-  # Set the link url for the title. For example, to take 
+  # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
   # config.site_title_link = "/"
@@ -15,9 +15,9 @@ ActiveAdmin.setup do |config|
   # == Default Namespace
   #
   # Set the default namespace each administration resource
-  # will be added to. 
+  # will be added to.
   #
-  # eg: 
+  # eg:
   #   config.default_namespace = :hello_world
   #
   # This will create resources in the HelloWorld module and

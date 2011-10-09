@@ -4,8 +4,7 @@
     = render "shared/meta"
     %body
       = render "shared/header"
-                          
       .container
         .content
-          = render :partial => "shared/flashes"
+          = render "shared/flashes"
           = yield

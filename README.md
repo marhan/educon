@@ -45,3 +45,4 @@ shows best practices hints with [rails-bestpractices](http://rails-bestpractices
 
     $> rails_best_practices -f html --with-textmate
     $> open rails_best_practices_output.html
+
