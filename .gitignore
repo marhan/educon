@@ -1,11 +1,16 @@
 # Rails
-.bundle
 db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
+
+#bundler
+.bundle
 vendor/ruby
+
+# metrics
 coverage
+rails_best_practices_output.html
 
 # IDE
 .idea

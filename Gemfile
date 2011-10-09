@@ -69,6 +69,7 @@ group :development, :test do
     # metrics
     gem 'metrical'
     gem "simplecov", :require => false
+    gem "rails_best_practices"
   end
 end
 
