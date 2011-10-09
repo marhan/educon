@@ -2,7 +2,7 @@
 
 This project is very new and far away from first release candidate!
 
-# Used Projects
+## Used Projects
 
 [Devise](https://github.com/plataformatec/devise) - for sign in
 
@@ -10,19 +10,19 @@ This project is very new and far away from first release candidate!
 
 [Twitter Bootstrap](https://github.com/twitter/bootstrap) - for styles
 
-# Demo Application
+## Demo Application
 
 [Educon at heroku](educon.heroku.com)
 
 User / Password: user@educon.com / password
 
-# Run Application in deployment mode
+## Run Application in deployment mode
 
     $> bundle exec rake db:migrate
     $> bundle exec rake rd:seed
     $> rails s
 
-# Run rspec & cucumber tests
+## Run rspec & cucumber tests
 
     $> bundle exec rake
 
@@ -30,9 +30,9 @@ User / Password: user@educon.com / password
 
     $> guard
 
-# Run Metrics
+## Run Metrics
 
-shows several metrics of [metrical](http://iain.nl/easier-metricfu-with-metrical)
+shows several metrics with [metrical](http://iain.nl/easier-metricfu-with-metrical)
 
     $> bundle exec metrical
 
