@@ -6,7 +6,7 @@
       - if user_signed_in?
 
         %ul.nav
-          = get_top_bar_menu_item('Home', root_path)
+          = get_top_bar_menu_item('Home', users_home_path)
           = get_top_bar_menu_item('Help', "https://github.com/marhan/educon/wiki")
           = get_top_bar_menu_item('Sign out', destroy_user_session_path)
         %p.pull-right

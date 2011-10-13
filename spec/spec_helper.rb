@@ -24,6 +24,7 @@ def configure
     config.use_transactional_fixtures = true
     # Controller 
     config.extend ControllerMacros, :type => :controller
+    config.extend ControllerMacros, :type => :helper
     # For ApplicationHelper_Specs -> HAML Helper Methods
     config.include Haml, :type => :helper
     config.include Haml::Helpers, :type => :helper
