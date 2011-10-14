@@ -16,6 +16,18 @@ This project is very new and far away from first release candidate!
 
 User / Password: user@educon.com / password
 
+
+## Preconditions
+
+Due to Heroku out of the box deployment problems with Rails 3.1, you need to install prostgresql sources on you're machine.
+Choose the way you prefere to get the source (e.g. MacPorts).
+
+Then you can compile the native extensions of the pg gem...
+
+    $>env ARCHFLAGS="-arch x86_64" gem install pg -- with-pg-config=/path/to/your/postgresql/source
+
+[Further Information](http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/)
+
 ## Run Application in deployment mode
 
     $> bundle exec rake db:migrate
@@ -45,4 +57,6 @@ shows best practices hints with [rails-bestpractices](http://rails-bestpractices
 
     $> rails_best_practices -f html --with-textmate
     $> open rails_best_practices_output.html
+
+
 
