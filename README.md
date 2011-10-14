@@ -12,7 +12,7 @@ This project is very new and far away from first release candidate!
 
 ## Demo Application
 
-[Educon at heroku](educon.heroku.com)
+[Educon at heroku](http://educon.heroku.com)
 
 User / Password: user@educon.com / password
 
