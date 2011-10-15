@@ -39,7 +39,7 @@ end
 
 When /^I sign in as "(.*)\/(.*)"$/ do |email, password|
   Given %{I am not signed in}
-  When %{I go to the sign in page}
+  When %{I go to the users sign in page}
   And %{I fill in "user_email" with "#{email}"}
   And %{I fill in "user_password" with "#{password}"}
   And %{I press "Sign in"}
