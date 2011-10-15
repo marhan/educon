@@ -1,4 +1,4 @@
-Feature: Sign up
+Feature: User sign up
   In order to get access to protected sections of the site
   As a user
   I want to be able to sign up
@@ -6,7 +6,7 @@ Feature: Sign up
     Background:
       Given I am not signed in
       And I am on the home page
-      And I go to the sign up page
+      And I go to the users sign up page
       
     Scenario: User signs up with valid data
       And I fill in the following:
