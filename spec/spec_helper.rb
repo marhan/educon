@@ -12,6 +12,7 @@ def configure
   require 'rspec/rails'
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+  Dir[Rails.root.join("spec/requests/support/**/*.rb")].each { |f| require f }
 
   ActiveSupport::Dependencies.clear
   ActiveRecord::Base.instantiate_observers
@@ -25,6 +26,11 @@ def configure
     # Controller 
     config.extend ControllerMacros, :type => :controller
     config.extend ControllerMacros, :type => :helper
+    # requests
+    config.include RequestPathDefinition, :type => :request
+    config.include LinkDefinition, :type => :request
+    config.include ContentValidator, :type => :request
+    config.include WebActions, :type => :request
     # For ApplicationHelper_Specs -> HAML Helper Methods
     config.include Haml, :type => :helper
     config.include Haml::Helpers, :type => :helper

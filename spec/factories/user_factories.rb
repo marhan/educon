@@ -13,4 +13,5 @@ FactoryGirl.define do
     email 'admin@galleries.test'
     password 'password'
   end
+
 end
