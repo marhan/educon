@@ -53,6 +53,7 @@ group :development, :test do
   gem "cucumber-rails"
   gem "capybara"
   gem "launchy"
+  gem "hashie", "1.2.0"
 
   # you don't need guard to test on travis
   unless ENV['TRAVIS']

@@ -28,7 +28,6 @@ def configure
     config.extend ControllerMacros, :type => :helper
     # requests
     config.include RequestPathDefinition, :type => :request
-    config.include LinkDefinition, :type => :request
     config.include ContentValidator, :type => :request
     config.include WebActions, :type => :request
     # For ApplicationHelper_Specs -> HAML Helper Methods

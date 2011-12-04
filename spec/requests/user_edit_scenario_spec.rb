@@ -6,6 +6,7 @@ describe "User" do
 
     before do
       @user = FactoryGirl.create(:user)
+      @config = ConfigLoader.create File.expand_path("../support/requests_config.yml", __FILE__)
     end
 
     it "should be able to edit his account" do
@@ -13,7 +14,7 @@ describe "User" do
       visit path_to_users_sign_in_page
       sign_in_user @user
       user_should_be_signed_in
-      click_link link_for_edit_account
+      click_link @config.account
 
     end
   end
