@@ -50,7 +50,6 @@ group :development, :test do
   # BDD
   gem "factory_girl_rails", ">= 1.2"
   gem "database_cleaner"
-  gem "cucumber-rails"
   gem "capybara"
   gem "launchy"
 
@@ -58,7 +57,6 @@ group :development, :test do
   unless ENV['TRAVIS']
     gem 'rb-fsevent', :require => false
     gem 'guard-rspec'
-    gem 'guard-cucumber'
     gem 'guard-bundler'
     gem 'guard-migrate'
     gem "growl_notify"
