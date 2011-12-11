@@ -3,11 +3,11 @@ require 'requests/support/request_macros'
 
 describe "User" do
 
-  describe "signs in and " do
+  describe "signed in" do
 
     before(:each) do
       @user = FactoryGirl.create(:user)
-      sign_in @user
+      sign_in_as @user.email, @user.password
     end
 
     it "should be able to edit his account" do

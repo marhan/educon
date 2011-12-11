@@ -1,8 +1,7 @@
 # encoding: utf-8
-def sign_in(user)
+def sign_in_as(email, password)
   visit '/users/sign_in'
-  fill_in("user_email", :with => user.email)
-  fill_in("user_password", :with => user.password)
+  fill_in("user_email", :with => email)
+  fill_in("user_password", :with => password)
   click_button("Sign in")
-  page.should have_content("Signed in as #{user.email}")
 end

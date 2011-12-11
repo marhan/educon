@@ -27,7 +27,6 @@ def configure
     config.extend ControllerMacros, :type => :controller
     config.extend ControllerMacros, :type => :helper
     # requests
-    Capybara.default_selector           = :css
     # For ApplicationHelper_Specs -> HAML Helper Methods
     config.include Haml, :type => :helper
     config.include Haml::Helpers, :type => :helper
