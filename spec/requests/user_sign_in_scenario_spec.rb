@@ -11,6 +11,7 @@ describe "User" do
 
     it "should not be able to sign in" do
       visit '/users/sign_in'
+      
       sign_in_as 'user@test.com', 'please'
       page.should have_content 'Invalid email or password.'
 
@@ -38,23 +39,24 @@ describe "User" do
     end
   end
 
-  describe "signs in with correct sign in data" do
+  describe "uses correct data to sign in" do
 
     before(:each) do
       @user = FactoryGirl.create(:user)
     end
 
-    it 'should sign in successfully' do
+    it 'should signed in successfully' do
       visit '/users/sign_in'
+      
       fill_in("user_email", :with => @user.email)
       fill_in("user_password", :with => @user.password)
       click_button("Sign in")
 
       page.should have_content 'Signed in successfully.'
-
+      page.should have_content("Signed in as #{@user.email}")
+      page.should have_content 'Sign out'
       page.should_not have_content 'Sign up'
       page.should_not have_content 'Sign in'
-      page.should have_content 'Sign out'
     end
   end
 
