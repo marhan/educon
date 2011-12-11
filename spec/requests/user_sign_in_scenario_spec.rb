@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spec_helper'
 require 'requests/support/request_macros'
 
@@ -49,12 +50,16 @@ describe "Given User" do
 
     describe "when he types in correct sign in data," do
 
-      before(:each)do
+      before(:each) do
         visit '/users/sign_in'
 
         fill_in("user_email", :with => @user.email)
         fill_in("user_password", :with => @user.password)
         click_button("Sign in")
+      end
+
+      it "then he should see 'Signed in successfully.'" do
+        page.should have_content 'Signed in successfully.'
       end
 
       it 'then he should signed in successfully' do
