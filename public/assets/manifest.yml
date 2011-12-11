@@ -1,6 +1,8 @@
 ---
 rails.png: rails-dd352fc2630e5f9aa5685ef1d7fe5997.png
+active_admin.js: active_admin-7bdf716ead18bcaa1aac9bfb07bd90a7.js
 application.js: application-bb7881f73b6278e094d85a3d04724ff5.js
+active_admin.css: active_admin-6efbec2f701c30ca158518714820e2eb.css
 application.css: application-a22ee63bedccb4f4938c210b9001f28c.css
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-c4711ac0d8d6af0c04142514869ec912.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-8b300fd5101bf07bb3de5ce85881d989.png
