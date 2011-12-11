@@ -25,14 +25,9 @@ def run
   end
 end
 
+configure
+run
 
-if defined?(Spork)
-  Spork.prefork { configure }
-  Spork.each_run { run }
-else
-  configure
-  run
-end
 
 
 

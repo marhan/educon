@@ -1,21 +1,27 @@
 require 'spec_helper'
+require 'requests/support/request_macros'
 
 describe "User" do
 
   describe "signs in and " do
 
-    before do
+    before(:each) do
       @user = FactoryGirl.create(:user)
-      @config = ConfigLoader.create File.expand_path("../support/requests_config.yml", __FILE__)
+      sign_in @user
     end
 
     it "should be able to edit his account" do
-      visit @config.path.to.users.sign.out
-      visit @config.path.to.users.sign.in
-      sign_in_user @user
-      user_should_be_signed_in
-      click_link @config.link.edit.account
+      click_link 'Edit Account'
 
+      fill_in('Firstname', :with => 'foz')
+      fill_in('Lastname', :with => 'baz')
+      fill_in('Email', :with=> 'foz.baz@test.com')
+      fill_in('Current password', :with=> @user.password)
+      click_button('Save')
+
+      visit '/'
+      page.should have_content('Signed in as foz.baz@test.com')
     end
   end
 end
+

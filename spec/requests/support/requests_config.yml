@@ -1,9 +1,0 @@
-link:
-  edit:
-    account: Edit Account
-path:
-  to:
-    users:
-      sign:
-        out: /users/sign_out
-        in: /users/sign_in

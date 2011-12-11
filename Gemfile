@@ -53,13 +53,10 @@ group :development, :test do
   gem "cucumber-rails"
   gem "capybara"
   gem "launchy"
-  gem "hashie", "1.2.0"
 
   # you don't need guard to test on travis
   unless ENV['TRAVIS']
     gem 'rb-fsevent', :require => false
-    gem 'spork', '~> 0.9.0.rc'
-    gem 'guard-spork'
     gem 'guard-rspec'
     gem 'guard-cucumber'
     gem 'guard-bundler'

@@ -27,20 +27,14 @@ def configure
     config.extend ControllerMacros, :type => :controller
     config.extend ControllerMacros, :type => :helper
     # requests
-    config.include RequestPathDefinition, :type => :request
-    config.include ContentValidator, :type => :request
-    config.include WebActions, :type => :request
+    Capybara.default_selector           = :css
     # For ApplicationHelper_Specs -> HAML Helper Methods
     config.include Haml, :type => :helper
     config.include Haml::Helpers, :type => :helper
     config.before(:each, :type => :helper) do |config|
       init_haml_helpers
     end
-
-
   end
-
-
 end
 
 def run
@@ -52,13 +46,10 @@ def run
   Educon::Application.reload_routes!
 end
 
-if defined?(Spork)
-  Spork.prefork { configure }
-  Spork.each_run { run }
-else
-  configure
-  run
-end
+
+configure
+run
+
 
 
 
