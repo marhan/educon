@@ -13,13 +13,12 @@ Educon::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
-
-  # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  
+  config.assets.compile = true
 
   # active admin assets
   #config.assets.precompile += %w[active_admin.css active_admin.js]
-  
+
   # Generate digests for assets URLs
   config.assets.digest = true
 
