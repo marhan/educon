@@ -1,0 +1,33 @@
+de:
+  topbar:
+    menu:
+      item:
+        home: 'Home'
+        help: 'Hilfe'
+        sign:
+          out: 'Ausloggen'
+          up: 'Registrieren'
+          in: 'Einloggen'
+    signed_in_as: 'Eingeloggt als'
+  form:
+    placeholder:
+      email: 'Email'
+      password: 'Passwort'
+    title:
+      sign:
+        up: 'Registrieren'
+    label:
+      firstname: "Vorname"
+      lastname: "Nachname"
+      email: "Email"
+      password: "Passwort"
+    help:
+      password_confirmation: "Passwort Wiederholung"
+    button:
+      register: "Anlegen"
+      reset: "Zurücksetzen"
+  link:
+    name:
+      password:
+        forgotten: "Passwort vergessen?"
+  

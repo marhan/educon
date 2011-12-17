@@ -1,0 +1,33 @@
+en:
+  topbar:
+    menu:
+      item:
+        home: 'Home'
+        help: 'Help'
+        sign:
+          out: 'Sign out'
+          up: 'Sign up'
+          in: 'Sign in'
+    signed_in_as: 'Signed in as'
+  form:
+    placeholder:
+      email: 'Email'
+      password: 'Password'
+    title:
+      sign:
+        up: 'Sign up'
+    label:
+      firstname: "Firstname"
+
+      lastname: "Lastname"
+      email: "Email"
+      password: "Password"
+    help:
+      password_confirmation: "Password confirmation"
+    button:
+      register: "Register"
+      reset: "Reset"
+  link:
+    name:
+      password:
+        forgotten: "Forgot your password?"
