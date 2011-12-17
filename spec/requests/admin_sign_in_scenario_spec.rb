@@ -20,7 +20,7 @@ describe "Given admin" do
       end
 
       it "than he should see 'Invalid email or password.'" do
-        page.should have_content 'Invalid email or password.'
+        page.should have_content I18n.t('devise.failure.invalid')
       end
 
       it "than he should not be signed in" do
@@ -48,11 +48,12 @@ describe "Given admin" do
       end
 
       it "then he should see 'Signed in successfully.'" do
-        page.should have_content 'Signed in successfully.'
+        page.should have_content I18n.t('devise.sessions.signed_in')
       end
 
       it "then he should be signed in" do
-        page.should have_content 'Logout'
+        page.should have_content I18n.t('active_admin.logout')
+        # not in locales, yet
         page.should_not have_content 'Login'
       end
 
@@ -68,7 +69,7 @@ describe "Given admin" do
       end
 
       it "then he should see 'Invalid email or password.'" do
-        page.should have_content 'Invalid email or password.'
+        page.should have_content I18n.t('devise.failure.invalid')
       end
 
       it "then he should not be signed in" do

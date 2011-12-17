@@ -18,12 +18,12 @@ describe "Given User" do
       end
 
       it "than he see error message and is not signed in" do
-        page.should have_content 'Invalid email or password.'
+        page.should have_content I18n.t('devise.failure.invalid')
 
         visit '/'
-        page.should_not have_content("Signed in as")
-        page.should have_content("Sign in")
-        page.should have_content("Sign up")
+        page.should_not have_content I18n.t('topbar.signed_in_as')
+        page.should have_content I18n.t('topbar.menu.item.sign.in')
+        page.should have_content I18n.t('topbar.menu.item.sign.up')
       end
     end
   end
@@ -42,9 +42,9 @@ describe "Given User" do
 
       it "then he should not signed in" do
         visit '/'
-        page.should_not have_content("Signed in as")
-        page.should have_content("Sign in")
-        page.should have_content("Sign up")
+        page.should have_content I18n.t('topbar.menu.item.sign.in')
+        page.should have_content I18n.t('topbar.menu.item.sign.up')
+        page.should_not have_content I18n.t('topbar.signed_in_as')
       end
     end
 
@@ -59,15 +59,14 @@ describe "Given User" do
       end
 
       it "then he should see 'Signed in successfully.'" do
-        page.should have_content 'Signed in successfully.'
+        page.should have_content I18n.t('devise.sessions.signed_in')
       end
 
       it 'then he should signed in successfully' do
-        page.should have_content 'Signed in successfully.'
-        page.should have_content("Signed in as #{@user.email}")
-        page.should have_content 'Sign out'
-        page.should_not have_content 'Sign up'
-        page.should_not have_content 'Sign in'
+        page.should have_content("#{I18n.t('topbar.signed_in_as')} #{@user.email}")
+        page.should have_content I18n.t('topbar.menu.item.sign.out')
+        page.should_not have_content I18n.t('topbar.menu.item.sign.up')
+        page.should_not have_content I18n.t('topbar.menu.item.sign.in')
       end
     end
   end

@@ -26,7 +26,7 @@ describe "Given user is not signed up" do
       end
 
       it "than he signed up successfully" do
-        page.should have_content 'Welcome! You have signed up successfully.'
+        page.should have_content I18n.t('devise.registrations.signed_up')
       end
 
     end

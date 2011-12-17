@@ -23,7 +23,7 @@ describe "Given user is signed in," do
 
     it "than the new account data should be used in layout" do
       visit '/'
-      page.should have_content('Signed in as foz.baz@test.com')
+      page.should have_content("#{I18n.t('topbar.signed_in_as')} foz.baz@test.com")
     end
   end
 end

@@ -7,7 +7,7 @@ describe "Given user is signed in," do
   before(:each) do
     @user = FactoryGirl.create(:user)
     sign_in_as @user.email, @user.password
-    page.should have_content("Signed in as #{@user.email}")
+    page.should have_content("#{I18n.t('topbar.signed_in_as')} #{@user.email}")
   end
 
   describe "when he is signing out," do
@@ -19,10 +19,10 @@ describe "Given user is signed in," do
 
     it "than he should be signed out" do
       visit '/'
-      page.should_not have_content("Signed in as #{@user.email}")
-      page.should_not have_content 'Sign out'
-      page.should have_content 'Sign up'
-      page.should have_content 'Sign in'
+      page.should_not have_content("#{I18n.t('topbar.signed_in_as')} #{@user.email}")
+      page.should_not have_content I18n.t('topbar.menu.item.sign.out')
+      page.should have_content I18n.t('topbar.menu.item.sign.up')
+      page.should have_content I18n.t('topbar.menu.item.sign.in')
     end
   end
 
