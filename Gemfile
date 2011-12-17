@@ -33,6 +33,7 @@ group :production do
   # http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/
   # env ARCHFLAGS="-arch x86_64" gem install pg -- with-pg-config=/opt/local/lib/postgresql90/bin/pg_config
   gem "pg", "~> 0.11.0"
+  gem 'therubyracer'
 end
 
 group :development do
