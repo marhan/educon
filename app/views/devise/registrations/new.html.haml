@@ -44,8 +44,8 @@
               = t('form.help.password_confirmation')
 
         .actions
-          = f.submit t('form.button.register'), :class => 'btn primary'
-          %button{:type=>'reset', :class => 'btn'}
+          = f.submit t('form.button.register'), :class => 'btn primary', :id=>'button_signup'
+          %button{:type=>'reset', :class => 'btn', :id=>'button_signup_reset'}
             = t('form.button.reset')
 
   .span4

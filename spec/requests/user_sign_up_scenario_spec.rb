@@ -22,7 +22,7 @@ describe "Given user is not signed up" do
         fill_in('Email', :with => 'user@test.com')
         fill_in('Password', :with => 'please')
         fill_in('Password confirmation', :with => 'please')
-        click_button('Register')
+        click_button('button_signup')
       end
 
       it "than he signed up successfully" do
@@ -39,7 +39,7 @@ describe "Given user is not signed up" do
         fill_in('Email', :with => 'invalidemail')
         fill_in('Password', :with => 'please')
         fill_in('Password confirmation', :with => 'please')
-        click_button('Register')
+        click_button('button_signup')
       end
 
       it "than he should see 'Email is invalid'" do
@@ -56,11 +56,11 @@ describe "Given user is not signed up" do
         fill_in('Email', :with => 'invalidemail')
         fill_in('Password', :with => '')
         fill_in('Password confirmation', :with => 'please')
-        click_button('Register')
+        click_button('button_signup')
       end
 
       it "than he should see 'Password can't be blank'" do
-        page.should have_content "Password can't be blank"
+        page.should have_content "Password #{I18n.t('errors.messages.blank')}"
       end
 
     end
@@ -73,7 +73,7 @@ describe "Given user is not signed up" do
         fill_in('Email', :with => 'invalidemail')
         fill_in('Password', :with => 'please')
         fill_in('Password confirmation', :with => '')
-        click_button('Register')
+        click_button('button_signup')
       end
 
       it "than he should see 'Password doesn't match confirmation'" do

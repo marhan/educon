@@ -14,7 +14,7 @@ describe "Given user is signed in," do
 
     before(:each) do
       visit '/users/sign_out'
-      page.should have_content 'Sign in'
+      page.should have_content I18n.t('topbar.menu.item.sign.in')
     end
 
     it "than he should be signed out" do

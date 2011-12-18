@@ -37,7 +37,7 @@ describe "Given User" do
 
       before(:each) do
         sign_in_as @user.email, 'wrong password'
-        page.should have_content 'Invalid email or password.'
+        page.should have_content I18n.t('devise.failure.invalid')
       end
 
       it "then he should not signed in" do
@@ -55,7 +55,7 @@ describe "Given User" do
 
         fill_in("user_email", :with => @user.email)
         fill_in("user_password", :with => @user.password)
-        click_button("Sign in")
+        click_button("button_sign_in")
       end
 
       it "then he should see 'Signed in successfully.'" do
