@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.1'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
@@ -21,7 +21,7 @@ gem 'meta_search', '>= 1.1.0.pre'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'compass'
+  #gem 'compass'
   gem 'coffee-rails'
   gem 'uglifier'
 end
@@ -32,7 +32,7 @@ group :production do
   # heroku needs this for Rails 3.1 ...
   # http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/
   # env ARCHFLAGS="-arch x86_64" gem install pg -- with-pg-config=/opt/local/lib/postgresql90/bin/pg_config
-  gem "pg", "~> 0.11.0"
+  #gem "pg", "~> 0.11.0"
   gem 'therubyracer'
 end
 
