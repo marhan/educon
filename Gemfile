@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source :rubygems
 
 gem 'rails', '3.1'
 gem 'sqlite3'
@@ -32,7 +32,7 @@ group :production do
   # heroku needs this for Rails 3.1 ...
   # http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/
   # env ARCHFLAGS="-arch x86_64" gem install pg -- with-pg-config=/opt/local/lib/postgresql90/bin/pg_config
-  #gem "pg", "~> 0.11.0"
+  gem "pg", "~> 0.11.0"
   gem 'therubyracer'
 end
 
