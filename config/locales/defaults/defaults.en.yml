@@ -18,7 +18,6 @@ en:
         up: 'Sign up'
     label:
       firstname: "Firstname"
-
       lastname: "Lastname"
       email: "Email"
       password: "Password"
@@ -31,3 +30,8 @@ en:
     name:
       password:
         forgotten: "Forgot your password?"
+
+  activerecord:
+    attributes:
+      user:
+        password: "Password"

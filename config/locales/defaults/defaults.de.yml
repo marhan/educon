@@ -30,4 +30,9 @@ de:
     name:
       password:
         forgotten: "Passwort vergessen?"
+
+  activerecord:
+    attributes:
+      user:
+        password: "Passwort"
   

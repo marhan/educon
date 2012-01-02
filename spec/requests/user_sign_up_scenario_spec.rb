@@ -59,8 +59,8 @@ describe "Given user is not signed up" do
         click_button('button_signup')
       end
 
-      it "than he should see 'Password can't be blank'" do
-        page.should have_content "Password #{I18n.t('errors.messages.blank')}"
+      it "than he should see 'Passwort errors.messages.blank'" do
+        page.should have_content "Passwort #{I18n.t('errors.messages.blank')}"
       end
 
     end
@@ -76,8 +76,8 @@ describe "Given user is not signed up" do
         click_button('button_signup')
       end
 
-      it "than he should see errors.messages.confirmation" do
-        page.should have_content "Password #{I18n.t('errors.messages.confirmation')}"
+      it "than he should see 'Passwort errors.messages.confirmation'" do
+        page.should have_content "Passwort #{I18n.t('errors.messages.confirmation')}"
       end
     end
   end
