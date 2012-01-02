@@ -43,7 +43,7 @@ describe "Given user is not signed up" do
       end
 
       it "than he should see 'Email is invalid'" do
-        page.should have_content "Email is invalid"
+        page.should have_content "Email #{I18n.t('errors.messages.invalid')}"
       end
 
     end
@@ -76,8 +76,8 @@ describe "Given user is not signed up" do
         click_button('button_signup')
       end
 
-      it "than he should see 'Password doesn't match confirmation'" do
-        page.should have_content "Password doesn't match confirmation"
+      it "than he should see errors.messages.confirmation" do
+        page.should have_content "Password #{I18n.t('errors.messages.confirmation')}"
       end
     end
   end

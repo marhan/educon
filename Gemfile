@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '3.1'
+gem 'rails',        '3.1'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
@@ -8,20 +8,19 @@ gem 'haml'
 gem 'bootstrap-sass'
 # avoiding version 1.3.4
 # http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
-gem 'rack', '1.3.3'
+gem 'rack',         '1.3.3'
 # authentication
 gem 'devise'
 # administration interface
 gem 'activeadmin'
-# moved out of assets, due active admin init probems
+# moved out of assets, due active admin init problems
 # http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
 gem 'sass-rails'
-gem 'meta_search', '>= 1.1.0.pre'
+gem 'meta_search',  '>= 1.1.0.pre'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  #gem 'compass'
   gem 'coffee-rails'
   gem 'uglifier'
 end

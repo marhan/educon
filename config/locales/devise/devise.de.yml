@@ -4,7 +4,10 @@ de:
       not_found: "nicht gefunden"
       already_confirmed: "wurde bereits bestätigt"
       not_locked: "ist nicht gesperrt"
-
+      not_saved:
+        one: "1 Fehler verhindert das Speichern:"
+        other: "%{count} Fehler verhindern das Speichern:"
+        
   devise:
     failure:
       unauthenticated: 'Sie müssen sich anmelden oder registrieren, bevor Sie weiterfahren können.'
