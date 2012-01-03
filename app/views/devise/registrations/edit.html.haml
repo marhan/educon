@@ -18,35 +18,35 @@
 
           = f.label :firstname, :for => 'xlInput'
           .input
-            = f.text_field :firstname, :class => 'xlarge', :id => 'Firstname'
+            = f.text_field :firstname, :class => 'xlarge', :id => 'user_firstname'
 
         .clearfix
           = f.label :lastname, :for => 'xlInput'
           .input
-            = f.text_field :lastname, :class => 'xlarge', :id => 'Lastname'
+            = f.text_field :lastname, :class => 'xlarge', :id => 'user_lastname'
 
         .clearfix
           = f.label :email, :for => 'xlInput'
           .input
-            = f.text_field :email, :class => 'xlarge', :id => 'Email'
+            = f.text_field :email, :class => 'xlarge', :id => 'user_email'
 
         .clearfix
           = f.label :password, :for => 'xlInput'
           .input
-            = f.password_field :password, :id => 'Password'
+            = f.password_field :password, :id => 'user_password'
 
         .clearfix
           = f.label :password, :for => 'xlInput'
           .input
-            = f.password_field :password_confirmation, :id => 'Password confirmation'
+            = f.password_field :password_confirmation, :id => 'user_password_confirmation'
             %span.help-inline
               password confirmation
 
         .clearfix
           = f.label :current_password, :for => 'xlInput'
           .input
-            = f.password_field :current_password, :id => 'Current password'
+            = f.password_field :current_password, :id => 'user_current_password'
 
         .actions
-          = f.submit "Save", :class => 'btn primary'
+          = f.submit t("form.button.save"), :class => 'btn primary'
           %a.btn{:href => "/"} Cancel

@@ -2,39 +2,61 @@ require 'spec_helper'
 
 describe PagesController do
 
-  describe "with user signed IN" do
+  describe "Given User is signed in," do
 
     signin_user
 
-    describe "request get 'welcome'" do
+    describe "when he visits 'welcome' via get," do
 
-      before{ get :welcome }
+      before { get :welcome }
 
-      it "should be successful" do
+      it "than response should be successful" do
         response.should be_success
       end
 
-      it "should render view 'welcome'" do
+      it "than 'welcome' view should rendered" do
         response.should render_template(:welcome)
       end
 
     end
-  end
 
-  describe "with user signed OUT" do
+    describe "when he visits 'home' via get," do
 
-    describe "request get 'welcome'" do
+      before { get :home }
 
-      before { get :welcome }
-
-      it "should be successful" do
+      it "than response should be successful" do
         response.should be_success
       end
 
-      it "should render view 'welcome'" do
+      it "than 'home' should view should rendered" do
+        response.should render_template(:home)
+      end
+    end
+  end
+  
+  describe "Given User is not signed in," do
+
+    describe "when he visits 'welcome' via get," do
+
+      before { get :welcome }
+
+      it "than response should be successful" do
+        response.should be_success
+      end
+
+      it "than view 'welcome' should be rendered" do
         response.should render_template(:welcome)
       end
 
+    end
+
+    describe "when he visits 'home' via get," do
+
+      before { get :home }
+
+      it "than response should  NOT be successful" do
+        response.should_not be_success
+      end
     end
   end
 end

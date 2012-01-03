@@ -26,6 +26,7 @@ en:
     button:
       register: "Register"
       reset: "Reset"
+      save: "Save"
   link:
     name:
       password:

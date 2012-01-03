@@ -19,7 +19,7 @@ describe "Given admin" do
         click_button('Login')
       end
 
-      it "than he should see 'Invalid email or password.'" do
+      it "than he should see 'devise.failure.invalid'" do
         page.should have_content I18n.t('devise.failure.invalid')
       end
 

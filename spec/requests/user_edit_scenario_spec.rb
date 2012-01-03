@@ -14,11 +14,11 @@ describe "Given user is signed in," do
     before(:each) do
       click_link 'Edit Account'
 
-      fill_in('Firstname', :with => 'foz')
-      fill_in('Lastname', :with => 'baz')
-      fill_in('Email', :with=> 'foz.baz@test.com')
-      fill_in('Current password', :with=> @user.password)
-      click_button('Save')
+      fill_in('user_firstname', :with => 'foz')
+      fill_in('user_lastname', :with => 'baz')
+      fill_in('user_email', :with=> 'foz.baz@test.com')
+      fill_in('user_current_password', :with=> @user.password)
+      click_button(I18n.t("form.button.save"))
     end
 
     it "than the new account data should be used in layout" do

@@ -26,6 +26,7 @@ de:
     button:
       register: "Anlegen"
       reset: "Zurücksetzen"
+      save: "Speichern"
   link:
     name:
       password:
