@@ -31,8 +31,24 @@ en:
     name:
       password:
         forgotten: "Forgot your password?"
-
   activerecord:
     attributes:
       user:
         password: "Password"
+  registrations:
+    new:
+      heading: "Welcome"
+      subheading: "sign into you're account at the top of the page or sign up a new one"
+    edit:
+      heading: "You're Profil"
+      subheading: ""
+  sidebar:
+    link_list:
+      heading: "Alternative Links"
+  flash:
+    message:
+      type:
+        alert: "Alert"
+        success: "Success"
+        notice: "Notice"
+        error: "Error"

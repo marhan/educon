@@ -12,9 +12,9 @@ describe FlashMessageHelper do
     end
 
     it "should build flash with parameters" do
-      html = create_flash_message("flash_message_class", "flash_type", "flash_message")
-      html.should =~ /class='alert-message flash_message_class fade in'/
-      html.should =~ /Flash_type/ # capitalized
+      html = create_flash_message("warning", "alert", "flash_message")
+      html.should =~ /class='alert-message warning fade in'/
+      html.should =~ /Warnung/ # capitalized
       html.should =~ /flash_message/
     end
 

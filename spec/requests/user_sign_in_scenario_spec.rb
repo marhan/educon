@@ -18,7 +18,7 @@ describe "Given User" do
       end
 
       it "than he see error message and is not signed in" do
-        page.should have_content I18n.t('devise.failure.invalid')
+        page.should have_content "Warnung Ungültige Anmeldedaten"
 
         visit '/'
         page.should_not have_content I18n.t('topbar.signed_in_as')

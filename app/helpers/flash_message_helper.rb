@@ -19,7 +19,7 @@ module FlashMessageHelper
         end
         haml_tag(:span, {:class => "flash_message"}) do
           haml_tag(:strong, {:class => "flash_message_type"}) do
-            haml_concat type.to_s.capitalize
+            haml_concat I18n.t("flash.message.type.#{type}")
           end
           haml_tag(:span, {:class => "flash_message_text"}) do
             haml_concat message.to_s

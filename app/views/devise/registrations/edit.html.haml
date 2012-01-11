@@ -1,9 +1,11 @@
 .page-header
   = render "shared/flashes"
   %h1
-    = "Profile of #{current_user.firstname} #{current_user.lastname}"
+    = t('registrations.edit.heading')
+    = "#{current_user.firstname} #{current_user.lastname}"
 
-    %small edit you're account details
+    %small
+      = t('registrations.edit.subheading')
 .row
   .span14
     %h2
@@ -40,7 +42,7 @@
           .input
             = f.password_field :password_confirmation, :id => 'user_password_confirmation'
             %span.help-inline
-              password confirmation
+              = t('form.help.password_confirmation')
 
         .clearfix
           = f.label :current_password, :for => 'xlInput'
