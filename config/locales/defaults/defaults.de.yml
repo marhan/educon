@@ -37,8 +37,8 @@ de:
         password: "Passwort"
   registrations:
     new:
-      heading: "Wilkommen"
-      subheading: "logge Dich oben ein oder erstelle ein neues Profil"
+      heading: "Willkommen"
+      subheading: "hier kannst du dein Profil erstellen"
     edit:
       heading: "Dein Profil"
       subheading: ""

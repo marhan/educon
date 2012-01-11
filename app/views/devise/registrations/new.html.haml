@@ -19,33 +19,33 @@
 
           = f.label t('form.label.firstname'), :for => 'xlInput'
           .input
-            = f.text_field :firstname, :class => 'xlarge', :id => 'Firstname'
+            = f.text_field :firstname, :class => 'xlarge', :id => 'field_firstname'
 
         .clearfix
           = f.label t('form.label.lastname'), :for => 'xlInput'
           .input
-            = f.text_field :lastname, :class => 'xlarge', :id => 'Lastname'
+            = f.text_field :lastname, :class => 'xlarge', :id => 'field_lastname'
 
         .clearfix
           = f.label t('form.label.email'), :for => 'xlInput'
           .input
-            = f.text_field :email, :class => 'xlarge', :id => 'Email'
+            = f.text_field :email, :class => 'xlarge', :id => 'field_email'
 
         .clearfix
           = f.label t('form.label.password'), :for => 'xlInput'
           .input
-            = f.password_field :password, :id => 'Password'
+            = f.password_field :password, :id => 'field_password'
 
         .clearfix
           = f.label t('form.label.password'), :for => 'xlInput'
           .input
-            = f.password_field :password_confirmation, :id => 'Password confirmation'
+            = f.password_field :password_confirmation, :id => 'field_password_confirmation'
             %span.help-inline
               = t('form.help.password_confirmation')
 
         .actions
           = f.submit t('form.button.register'), :class => 'btn primary', :id=>'button_signup'
-          %button{:type=>'reset', :class => 'btn', :id=>'button_signup_reset'}
+          %button{:type=>'reset', :class => 'btn', :id=>'button_reset'}
             = t('form.button.reset')
 
   .span4
