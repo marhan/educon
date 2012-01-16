@@ -50,11 +50,10 @@ describe "Given user is not signed up" do
       describe "and click button 'Zurücksetzen'" do
 
         before do
-
+          click_button('button_reset')
         end
 
         it "than all entered data is removed", :js => true do
-          click_button('button_reset')
           find_field('field_firstname').value.should == ""
           find_field('field_lastname').value.should == ""
           find_field('field_email').value.should == ""
@@ -71,7 +70,7 @@ describe "Given user is not signed up" do
         end
 
         it "than he signed up successfully" do
-          page.should have_content I18n.t('devise.registrations.signed_up')
+          page.should have_content 'Hinweis Sie haben sich erfolgreich registriert.'
         end
 
       end
@@ -90,7 +89,7 @@ describe "Given user is not signed up" do
       end
 
       it "than he should see 'Email is invalid'" do
-        page.should have_content "Email #{I18n.t('errors.messages.invalid')}"
+        page.should have_content "Email ist nicht gültig"
       end
 
     end
@@ -107,7 +106,7 @@ describe "Given user is not signed up" do
       end
 
       it "than he should see 'Passwort errors.messages.blank'" do
-        page.should have_content "Passwort #{I18n.t('errors.messages.blank')}"
+        page.should have_content "Passwort muss ausgefüllt werden"
       end
 
     end
@@ -124,7 +123,7 @@ describe "Given user is not signed up" do
       end
 
       it "than he should see 'Passwort errors.messages.confirmation'" do
-        page.should have_content "Passwort #{I18n.t('errors.messages.confirmation')}"
+        page.should have_content "Passwort stimmt nicht mit der Bestätigung überein"
       end
     end
   end

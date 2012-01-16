@@ -19,8 +19,8 @@ describe "Given admin" do
         click_button('Login')
       end
 
-      it "than he should see 'devise.failure.invalid'" do
-        page.should have_content I18n.t('devise.failure.invalid')
+      it "than he should see 'Ungültige Anmeldedaten.'" do
+        page.should have_content "Ungültige Anmeldedaten."
       end
 
       it "than he should not be signed in" do
@@ -47,14 +47,13 @@ describe "Given admin" do
         click_button('Login')
       end
 
-      it "then he should see 'Signed in successfully.'" do
-        page.should have_content I18n.t('devise.sessions.signed_in')
+      it "then he should see 'Erfolgreich angemeldet.'" do
+        page.should have_content "Erfolgreich angemeldet."
       end
 
       it "then he should be signed in" do
-        page.should have_content I18n.t('active_admin.logout')
-        # not in locales, yet
-        page.should_not have_content 'Login'
+        find('#page_title').should have_content("Übersicht")
+        find('#utility_nav').should have_content("#{@admin.email}")
       end
 
     end
@@ -68,13 +67,13 @@ describe "Given admin" do
         click_button('Login')
       end
 
-      it "then he should see 'Invalid email or password.'" do
-        page.should have_content I18n.t('devise.failure.invalid')
+      it "then he should see 'Ungültige Anmeldedaten.'" do
+        page.should have_content "Ungültige Anmeldedaten."
       end
 
       it "then he should not be signed in" do
-        page.should have_content 'Login'
-        page.should_not have_content 'Logout'
+        find_button 'Login'
+        page.should_not have_content("#{@admin.email} Abmelden")
       end
 
     end
