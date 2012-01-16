@@ -54,9 +54,12 @@ describe "Given user is not signed up" do
         end
 
         it "than all entered data is removed", :js => true do
-          #TODO: not working!
           click_button('button_reset')
           find_field('field_firstname').value.should == ""
+          find_field('field_lastname').value.should == ""
+          find_field('field_email').value.should == ""
+          find_field('field_password').value.should == ""
+          find_field('field_password_confirmation').value.should == ""
         end
 
       end
