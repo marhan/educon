@@ -23,11 +23,11 @@ Bundle with option "--without production"
 
     $> bundle install --without production
 
-or install PostgreSQL driver with 
+or install PostgreSQL driver with
 
     $> env ARCHFLAGS="-arch x86_64" gem install pg -- with-pg-config=/PATH/TO/POSTRESQL_SOURCE
-    
-You will find further information [here](http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/)
+
+You will find further information to Heroku and PostgreSQL [here](http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/)
 
 ## Run Application in deployment mode
 
@@ -35,13 +35,23 @@ You will find further information [here](http://blog.dievolution.net/tipps/tutor
     $> bundle exec rake rd:seed
     $> rails s
 
-## Run rspec
+## Run rspec unit tests
 
-    $> bundle exec rake
+    $> bundle exec rake unit
 
 ...or with guard...
 
     $> guard
+
+## Run rspec request tests with selenium
+
+    $> bundle exec rake scene
+
+## Run all tests in once
+
+    $> bundle exec rake
+
+Installed Firefox web browser is needed!
 
 ## Run Metrics
 
