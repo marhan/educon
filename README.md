@@ -47,11 +47,11 @@ You will find further information to Heroku and PostgreSQL [here](http://blog.di
 
     $> bundle exec rake scene
 
+Installed Firefox web browser is needed!
+
 ## Run all tests in once
 
     $> bundle exec rake
-
-Installed Firefox web browser is needed!
 
 ## Run Metrics
 
