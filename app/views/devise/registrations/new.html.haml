@@ -32,12 +32,12 @@
             = f.text_field :email, :class => 'xlarge', :id => 'field_email'
 
         .clearfix
-          = f.label t('form.label.password'), :for => 'xlInput'
+          = f.label t('form.label.password.default'), :for => 'xlInput'
           .input
             = f.password_field :password, :id => 'field_password'
 
         .clearfix
-          = f.label t('form.label.password'), :for => 'xlInput'
+          = f.label t('form.label.password.default'), :for => 'xlInput'
           .input
             = f.password_field :password_confirmation, :id => 'field_password_confirmation'
             %span.help-inline

@@ -13,5 +13,8 @@ end
 desc 'runs request scenes'
 task :requests => %w(spec:requests)
 
-desc 'runs unit specs'
+desc 'runs unit tests'
 task :unit => %w(spec:unit)
+
+desc 'runs all tests'
+task :all_tests => %w(spec:unit spec:requests)

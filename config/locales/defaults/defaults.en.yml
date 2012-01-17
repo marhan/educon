@@ -20,13 +20,17 @@ en:
       firstname: "Firstname"
       lastname: "Lastname"
       email: "Email"
-      password: "Password"
+      password:
+        default: "Password"
+        new: "New password"
+        current: "Current password"
     help:
       password_confirmation: "Password confirmation"
     button:
       register: "Register"
       reset: "Reset"
       save: "Save"
+      cancel: "Cancel"
   link:
     name:
       password:

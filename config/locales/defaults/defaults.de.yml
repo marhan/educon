@@ -20,13 +20,17 @@ de:
       firstname: "Vorname"
       lastname: "Nachname"
       email: "Email"
-      password: "Passwort"
+      password:
+        default: "Passwort"
+        new: "Neues Passwort"
+        current: "Aktuelles Passwort"
     help:
       password_confirmation: "Passwort Wiederholung"
     button:
       register: "Anlegen"
       reset: "Zurücksetzen"
       save: "Speichern"
+      cancel: "Abbrechen"
   link:
     name:
       password:
@@ -35,6 +39,7 @@ de:
     attributes:
       user:
         password: "Passwort"
+        current_password: "Aktuelles Passwort"
   registrations:
     new:
       heading: "Willkommen"

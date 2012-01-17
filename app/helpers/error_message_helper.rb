@@ -15,7 +15,10 @@ module ErrorMessageHelper
 
    def create_error_message(sentence, messages)
     capture_haml do
-      haml_tag(:div, {:class => "alert-message block-message error fade in", :data => {"alert" => 'alert'}}) do
+      haml_tag(:div, {
+          :id => "error_message",
+          :class => "alert-message block-message error fade in",
+          :data => {"alert" => 'alert'}}) do
         haml_tag(:a, {:class => "close", :href => "#"}) do
           haml_concat "x"
         end
