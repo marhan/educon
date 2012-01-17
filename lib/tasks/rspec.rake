@@ -11,7 +11,7 @@ namespace :spec do
 end
 
 desc 'runs request scenes'
-task :requests => %w(spec:scene)
+task :scene => %w(spec:scene)
 
 desc 'runs unit tests'
 task :unit => %w(spec:unit)
