@@ -8,7 +8,7 @@ de:
           out: 'Ausloggen'
           up: 'Registrieren'
           in: 'Einloggen'
-    signed_in_as: 'Eingeloggt als'
+    signed_in_as: "Eingeloggt als"
   form:
     placeholder:
       email: 'Email'

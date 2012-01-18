@@ -13,7 +13,10 @@ module FlashMessageHelper
 
   def create_flash_message(class_name, type, message)
     capture_haml do
-      haml_tag(:div, {:class => "alert-message #{class_name} fade in", :data => {"alert" => 'alert'}}) do
+      haml_tag(:div, {
+          :id    => "flash_message",
+          :class => "alert-message #{class_name} fade in",
+          :data  => {"alert" => 'alert'}}) do
         haml_tag(:a, {:class => "close", :href => "#"}) do
           haml_concat "x"
         end

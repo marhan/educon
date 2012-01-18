@@ -40,30 +40,32 @@ describe "Given user is not signed up" do
     describe "when he enters valid data'," do
 
       before(:each) do
-        fill_in('field_firstname', :with => 'Testy')
-        fill_in('field_lastname', :with => 'McUserton')
-        fill_in('field_email', :with => 'user@test.com')
-        fill_in('field_password', :with => 'please')
-        fill_in('field_password_confirmation', :with => 'please')
+        within_fieldset('fieldset_sign_up') do
+          fill_in('field_firstname', :with => 'Testy')
+          fill_in('field_lastname', :with => 'McUserton')
+          fill_in('field_email', :with => 'user@test.com')
+          fill_in('field_password', :with => 'please')
+          fill_in('field_password_confirmation', :with => 'please')
+        end
       end
 
       describe "and click button 'Zurücksetzen'" do
 
         before do
-          click_button('button_reset')
+          click_button('Zurücksetzen')
         end
 
         it "than all entered data is removed", :js => true do
-          find_field('field_firstname').value.should == ""
-          find_field('field_lastname').value.should == ""
-          find_field('field_email').value.should == ""
-          find_field('field_password').value.should == ""
-          find_field('field_password_confirmation').value.should == ""
+          find("#fieldset_sign_up").find_field('field_firstname').value.should == ""
+          find("#fieldset_sign_up").find_field('field_lastname').value.should == ""
+          find("#fieldset_sign_up").find_field('field_email').value.should == ""
+          find("#fieldset_sign_up").find_field('field_password').value.should == ""
+          find("#fieldset_sign_up").find_field('field_password_confirmation').value.should == ""
         end
 
       end
 
-      describe "and click button 'Anlegen" do
+      describe "and click button 'Anlegen'" do
 
         before do
           click_button('button_signup')
@@ -80,11 +82,13 @@ describe "Given user is not signed up" do
     describe "when he signs up with invalid email" do
 
       before(:each) do
-        fill_in('field_firstname', :with => 'Testy')
-        fill_in('field_lastname', :with => 'McUserton')
-        fill_in('field_email', :with => 'invalidemail')
-        fill_in('field_password', :with => 'please')
-        fill_in('field_password_confirmation', :with => 'please')
+        within_fieldset('fieldset_sign_up') do
+          fill_in('field_firstname', :with => 'Testy')
+          fill_in('field_lastname', :with => 'McUserton')
+          fill_in('field_email', :with => 'invalidemail')
+          fill_in('field_password', :with => 'please')
+          fill_in('field_password_confirmation', :with => 'please')
+        end
         click_button('button_signup')
       end
 
@@ -97,11 +101,13 @@ describe "Given user is not signed up" do
     describe "when he signs up without a password" do
 
       before(:each) do
-        fill_in('field_firstname', :with => 'Testy')
-        fill_in('field_lastname', :with => 'McUserton')
-        fill_in('field_email', :with => 'invalidemail')
-        fill_in('field_password', :with => '')
-        fill_in('field_password_confirmation', :with => 'please')
+        within_fieldset('fieldset_sign_up') do
+          fill_in('field_firstname', :with => 'Testy')
+          fill_in('field_lastname', :with => 'McUserton')
+          fill_in('field_email', :with => 'invalidemail')
+          fill_in('field_password', :with => '')
+          fill_in('field_password_confirmation', :with => 'please')
+        end
         click_button('button_signup')
       end
 
@@ -114,11 +120,13 @@ describe "Given user is not signed up" do
     describe "when he signs up without password confirmation" do
 
       before(:each) do
-        fill_in('field_firstname', :with => 'Testy')
-        fill_in('field_lastname', :with => 'McUserton')
-        fill_in('field_email', :with => 'invalidemail')
-        fill_in('field_password', :with => 'please')
-        fill_in('field_password_confirmation', :with => '')
+        within_fieldset('fieldset_sign_up') do
+          fill_in('field_firstname', :with => 'Testy')
+          fill_in('field_lastname', :with => 'McUserton')
+          fill_in('field_email', :with => 'invalidemail')
+          fill_in('field_password', :with => 'please')
+          fill_in('field_password_confirmation', :with => '')
+        end
         click_button('button_signup')
       end
 
