@@ -15,14 +15,14 @@ describe "Given user is not signed up" do
       find("#topbar").find_link("Registrieren").click
     end
 
-    describe "when the page is rendered" do
+    describe "when the page is rendered," do
 
-      it "than he see the expected content" do
-        page.should have_content("Willkommen")
-        page.should have_content("hier kannst du dein Profil erstellen")
+      it "than he see the correct page header" do
+        find("#page_title").should have_content("Willkommen")
+        find("#page_title").should have_content("hier kannst du dein Profil erstellen")
+      end
 
-        page.should have_content("Registrieren")
-
+      it "than he see the sign up form" do
         find("#label_firstname").should have_content "Vorname"
         find("#label_lastname").should have_content "Nachname"
         find("#label_email").should have_content "Email"
@@ -32,7 +32,9 @@ describe "Given user is not signed up" do
 
         find("#fieldset_sign_up").find_button('Anlegen')
         find("#fieldset_sign_up").find_button('Zurücksetzen')
+      end
 
+      it "than he see the sidebar" do
         find("#sidebar").find("h3").should have_content("Verwandte Links")
         find("#sidebar").find_link('Passwort vergessen?')
       end

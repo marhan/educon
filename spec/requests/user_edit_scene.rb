@@ -2,30 +2,42 @@
 require 'requests/spec_helper'
 require 'requests/support/request_macros'
 
-describe "Given user is signed in," do
+describe "Given user is signed in" do
 
   before(:each) do
     @user = FactoryGirl.create(:user)
     sign_in_as @user.email, @user.password
   end
 
-  describe "when he goes to the edit profile page," do
+  describe "and goes to the user edit page," do
 
     before(:each) do
-      visit("/")
       click_link 'link_edit_account'
     end
 
-    describe "than he should see" do
+    describe "when the page is rendered" do
 
-      it "the page correct page header" do
-          expected_content = "Dein Profil #{@user.firstname} #{@user.lastname}"
-          find("h1").should have_content(expected_content);
+      it "than he should see the correct page header" do
+        expected_content = "Dein Profil #{@user.firstname} #{@user.lastname}"
+        find("h1").should have_content(expected_content);
+      end
+
+      it "than he should see the edit form" do
+        find("#label_firstname").should have_content "Vorname"
+        find("#label_lastname").should have_content "Nachname"
+        find("#label_email").should have_content "Email"
+        find("#label_password_new").should have_content "Neues Passwort"
+        find("#label_password_new_confirmation").should have_content "Neues Passwort"
+        find("#label_password_current").should have_content "Aktuelles Passwort"
+        find("#help_password_confirmation").should have_content "Passwort Wiederholung"
+
+        find("#fieldset_user_edit").find_button('Speichern')
+        find("#fieldset_user_edit").find_link('Abbrechen')
       end
 
     end
 
-    describe "and edit his account with correct data," do
+    describe "when he edit his name and email with current password," do
 
       before(:each) do
         fill_in('field_firstname', :with => 'foz')
@@ -39,9 +51,13 @@ describe "Given user is signed in," do
         find("#topbar").should have_content("Eingeloggt als foz.baz@test.com")
       end
 
+      it "than he should see the flash message 'Hinweis Die Angaben wurden erfolgreich geändert.'" do
+        find("#flash_message").should have_content("Hinweis Die Angaben wurden erfolgreich geändert.");
+      end
+
     end
 
-     describe "and tries to edit his account without current password," do
+    describe "when he edit his name and email without current password," do
 
       before(:each) do
         fill_in('field_firstname', :with => 'foz')
@@ -50,8 +66,12 @@ describe "Given user is signed in," do
         click_button "Speichern"
       end
 
-      it "than he schould see the error message 'Aktuelles Passwort muss ausgefüllt werden'" do
+      it "than he should see the error message 'Aktuelles Passwort muss ausgefüllt werden'" do
         find("#error_message").should have_content("Aktuelles Passwort muss ausgefüllt werden")
+      end
+
+      it "than the original data should still be applied" do
+        find("#topbar").should have_content("Eingeloggt als #{@user.email}")
       end
 
     end
