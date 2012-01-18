@@ -4,13 +4,13 @@ FactoryGirl.define do
   factory :user, :class => User do
     firstname 'firstname'
     lastname 'lastname'
-    email 'user@galleries.com'
+    email 'user@educon.com'
     password 'password'
     password_confirmation 'password'
   end
 
   factory :admin_user, :class => AdminUser do
-    email 'admin@galleries.test'
+    email 'admin@educon.com'
     password 'password'
   end
 
