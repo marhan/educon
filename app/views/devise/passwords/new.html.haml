@@ -1,11 +1,9 @@
 .page-header
-  %h1
-    Forgot you're password?
-    %small login into you're account or reset you're password
+  %h1#page_title
+    = t('passwords.forgotten.new.heading')
 .row
   .span10
     %h2
-      Password Forgotten
 
     = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
 
@@ -14,17 +12,17 @@
       %fieldset
 
         .clearfix
-          = f.label :email, :for => 'xlInput'
+          = f.label t('form.label.email'), :for => 'xlInput', :id => 'label_email'
           .input
-            = f.text_field :email, :class => 'xlarge'
+            = f.text_field :email, :class => 'xlarge', :id => 'field_email'
 
         .actions
-          = f.submit "Send me instructions", :class => 'btn primary'
+          = f.submit t("form.button.send_me_instructions"), :class => 'btn primary'
           %button{:type=>'reset', :class => 'btn'}
-            Reset
+            = t('form.button.reset')
 
   .span4
     %h3
-      Alternatives
+      = t('sidebar.link_list.heading')
     %p
       = render "devise/shared/links"

@@ -8,6 +8,8 @@ en:
           out: 'Sign out'
           up: 'Sign up'
           in: 'Sign in'
+        password:
+          forgotten: "Password fergotten?"
     signed_in_as: 'Signed in as'
   form:
     placeholder:
@@ -16,6 +18,9 @@ en:
     title:
       sign:
         up: 'Sign up'
+      password:
+        forgotten:
+          new: ""
     label:
       firstname: "Firstname"
       lastname: "Lastname"
@@ -46,6 +51,12 @@ en:
     edit:
       heading: "You're Profil"
       subheading: ""
+  passwords:
+    forgotten:
+      new:
+        heading: "Password forgotten?"
+      edit:
+        heading: "Set new password"
   sidebar:
     link_list:
       heading: "Alternative Links"

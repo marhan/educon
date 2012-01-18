@@ -8,6 +8,8 @@ de:
           out: 'Ausloggen'
           up: 'Registrieren'
           in: 'Einloggen'
+        password:
+          forgotten: "Passwort vergessen?"
     signed_in_as: "Eingeloggt als"
   form:
     placeholder:
@@ -16,6 +18,9 @@ de:
     title:
       sign:
         up: 'Registrieren'
+      password:
+        forgotten:
+          new: "Senden einer Email mit Anweisung"
     label:
       firstname: "Vorname"
       lastname: "Nachname"
@@ -31,6 +36,7 @@ de:
       reset: "Zurücksetzen"
       save: "Speichern"
       cancel: "Abbrechen"
+      send_me_instructions: "Email mit Anweisungen senden"
   link:
     name:
       password:
@@ -47,6 +53,12 @@ de:
     edit:
       heading: "Dein Profil"
       subheading: ""
+  passwords:
+    forgotten:
+      new:
+        heading: "Password vergessen"
+      edit:
+        heading: "Passwort neu setzen"
   sidebar:
     link_list:
       heading: "Verwandte Links"
