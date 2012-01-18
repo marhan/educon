@@ -11,7 +11,8 @@ describe "Given user is not signed up" do
   describe "and goes to the sign up page," do
 
     before(:each) do
-      visit '/users/sign_up'
+      visit '/'
+      find("#topbar").find_link("Registrieren").click
     end
 
     describe "when the page is rendered" do
@@ -22,17 +23,18 @@ describe "Given user is not signed up" do
 
         page.should have_content("Registrieren")
 
-        page.should have_content('Vorname')
-        page.should have_content('Nachname')
-        page.should have_content('Email')
-        page.should have_content('Passwort')
-        page.should have_content("Passwort Wiederholung")
+        find("#label_firstname").should have_content "Vorname"
+        find("#label_lastname").should have_content "Nachname"
+        find("#label_email").should have_content "Email"
+        find("#label_password").should have_content "Passwort"
+        find("#label_password_confirmation").should have_content "Passwort"
+        find("#help_password_confirmation").should have_content "Passwort Wiederholung"
 
-        find_button('Anlegen')
-        find_button('Zurücksetzen')
+        find("#fieldset_sign_up").find_button('Anlegen')
+        find("#fieldset_sign_up").find_button('Zurücksetzen')
 
-        page.should have_content("Verwandte Links")
-        find_link('Passwort vergessen?')
+        find("#sidebar").find("h3").should have_content("Verwandte Links")
+        find("#sidebar").find_link('Passwort vergessen?')
       end
 
     end

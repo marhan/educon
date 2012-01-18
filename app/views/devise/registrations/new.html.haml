@@ -16,31 +16,30 @@
       %fieldset#fieldset_sign_up
 
         .clearfix
-
-          = f.label t('form.label.firstname'), :for => 'xlInput'
+          = f.label t('form.label.firstname'), :for => 'xlInput', :id => 'label_firstname'
           .input
             = f.text_field :firstname, :class => 'xlarge', :id => 'field_firstname'
 
         .clearfix
-          = f.label t('form.label.lastname'), :for => 'xlInput'
+          = f.label t('form.label.lastname'), :for => 'xlInput', :id => 'label_lastname'
           .input
             = f.text_field :lastname, :class => 'xlarge', :id => 'field_lastname'
 
         .clearfix
-          = f.label t('form.label.email'), :for => 'xlInput'
+          = f.label t('form.label.email'), :for => 'xlInput', :id => 'label_email'
           .input
             = f.text_field :email, :class => 'xlarge', :id => 'field_email'
 
         .clearfix
-          = f.label t('form.label.password.default'), :for => 'xlInput'
+          = f.label t('form.label.password.default'), :for => 'xlInput', :id => 'label_password'
           .input
             = f.password_field :password, :id => 'field_password'
 
         .clearfix
-          = f.label t('form.label.password.default'), :for => 'xlInput'
+          = f.label t('form.label.password.default'), :for => 'xlInput', :id => 'label_password_confirmation'
           .input
             = f.password_field :password_confirmation, :id => 'field_password_confirmation'
-            %span.help-inline
+            %span.help-inline#help_password_confirmation
               = t('form.help.password_confirmation')
 
         .actions
@@ -48,7 +47,7 @@
           %button{:type=>'reset', :class => 'btn', :id=>'button_reset'}
             = t('form.button.reset')
 
-  .span4
+  .span4#sidebar
     %h3
       = t('sidebar.link_list.heading')
     %p
