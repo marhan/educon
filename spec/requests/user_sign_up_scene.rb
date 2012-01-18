@@ -72,7 +72,11 @@ describe "Given user is not signed up" do
         end
 
         it "than he signed up successfully" do
-          page.should have_content 'Hinweis Sie haben sich erfolgreich registriert.'
+          find("#topbar").should have_content("Eingeloggt als user@test.com")
+        end
+
+        it "than he should see flash message 'Hinweis Sie haben sich erfolgreich registriert.'" do
+          find("#flash_message").should have_content 'Hinweis Sie haben sich erfolgreich registriert.'
         end
 
       end
@@ -92,8 +96,8 @@ describe "Given user is not signed up" do
         click_button('button_signup')
       end
 
-      it "than he should see 'Email is invalid'" do
-        page.should have_content "Email ist nicht gültig"
+      it "than he should see the error messsage 'Email ist nicht gültig'" do
+        find("#error_message").should have_content "Email ist nicht gültig"
       end
 
     end
@@ -111,8 +115,8 @@ describe "Given user is not signed up" do
         click_button('button_signup')
       end
 
-      it "than he should see 'Passwort errors.messages.blank'" do
-        page.should have_content "Passwort muss ausgefüllt werden"
+      it "than he should see the error message 'Passwort muss ausgefüllt werden'" do
+        find("#error_message").should have_content "Passwort muss ausgefüllt werden"
       end
 
     end
@@ -130,8 +134,8 @@ describe "Given user is not signed up" do
         click_button('button_signup')
       end
 
-      it "than he should see 'Passwort errors.messages.confirmation'" do
-        page.should have_content "Passwort stimmt nicht mit der Bestätigung überein"
+      it "than he should see the error message 'Passwort stimmt nicht mit der Bestätigung überein'" do
+        find("#error_message").should have_content "Passwort stimmt nicht mit der Bestätigung überein"
       end
     end
   end
