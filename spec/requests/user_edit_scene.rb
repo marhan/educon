@@ -36,7 +36,7 @@ describe "Given user is signed in," do
       end
 
       it "than the new account data should be applied" do
-        page.should have_content("Eingeloggt als foz.baz@test.com")
+        find("#topbar").should have_content("Eingeloggt als foz.baz@test.com")
       end
 
     end

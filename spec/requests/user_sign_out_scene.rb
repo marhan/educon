@@ -2,28 +2,27 @@
 require 'requests/spec_helper'
 require 'requests/support/request_macros'
 
-#TODO: wirklicher content
 describe "Given user is signed in," do
 
   before(:each) do
     @user = FactoryGirl.create(:user)
     sign_in_as @user.email, @user.password
-    page.should have_content("#{I18n.t('topbar.signed_in_as')} #{@user.email}")
   end
 
-  describe "when he is signing out," do
+  describe "when he signing out," do
 
     before(:each) do
-      visit '/users/sign_out'
-      page.should have_content I18n.t('topbar.menu.item.sign.in')
+      click_link("Ausloggen")
+    end
+
+    it "then he should see the flash message 'Hinweis Erfolgreich abgemeldet.'" do
+      find("#flash_message").should have_content("Hinweis Erfolgreich abgemeldet.")
     end
 
     it "than he should be signed out" do
-      visit '/'
-      page.should_not have_content("#{I18n.t('topbar.signed_in_as')} #{@user.email}")
-      page.should_not have_content I18n.t('topbar.menu.item.sign.out')
-      page.should have_content I18n.t('topbar.menu.item.sign.up')
-      page.should have_content I18n.t('topbar.menu.item.sign.in')
+      find("#topbar").should have_content("Registrieren")
+      find("#topbar").find("form").should have_button "Einloggen"
+      find("#topbar").should_not have_content("Eingeloggt als")
     end
   end
 
