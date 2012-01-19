@@ -10,6 +10,7 @@ end
 def configure
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'action_mailer'
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -22,16 +23,10 @@ def configure
   RSpec.configure do |config|
     config.mock_with :rspec
     config.use_transactional_fixtures = true
-    # Controller 
+    # Controllers
     config.extend ControllerMacros, :type => :controller
+    # Helpers
     config.extend ControllerMacros, :type => :helper
-    # requests
-    # For ApplicationHelper_Specs -> HAML Helper Methods
-    config.include Haml, :type => :helper
-    config.include Haml::Helpers, :type => :helper
-    config.before(:each, :type => :helper) do |config|
-      init_haml_helpers
-    end
   end
 end
 
@@ -43,7 +38,6 @@ def run
   # Reload routes
   Educon::Application.reload_routes!
 end
-
 
 configure
 run
