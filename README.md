@@ -10,6 +10,9 @@ This project is very new and far away from first release candidate!
 
 [Twitter Bootstrap](https://github.com/twitter/bootstrap) - for styles
 
+[Email-Specs](https://github.com/bmabey/email-spec) - for email tests
+
+
 ## Demo Application
 
 [Educon at heroku](http://educon.heroku.com)

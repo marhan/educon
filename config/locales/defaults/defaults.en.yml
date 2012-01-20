@@ -9,7 +9,8 @@ en:
           up: 'Sign up'
           in: 'Sign in'
         password:
-          forgotten: "Password fergotten?"
+          forgotten: "Password forgotten"
+        wiki: "Wiki"
     signed_in_as: 'Signed in as'
   form:
     placeholder:
@@ -54,7 +55,7 @@ en:
   passwords:
     forgotten:
       new:
-        heading: "Password forgotten?"
+        heading: "Password forgotten"
       edit:
         heading: "Set new password"
   sidebar:

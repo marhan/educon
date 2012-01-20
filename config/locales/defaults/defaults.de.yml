@@ -9,7 +9,8 @@ de:
           up: 'Registrieren'
           in: 'Einloggen'
         password:
-          forgotten: "Passwort vergessen?"
+          forgotten: "Passwort vergessen"
+        wiki: "Wiki"
     signed_in_as: "Eingeloggt als"
   form:
     placeholder:
@@ -56,7 +57,7 @@ de:
   passwords:
     forgotten:
       new:
-        heading: "Password vergessen"
+        heading: "Passwort vergessen"
       edit:
         heading: "Passwort neu setzen"
   sidebar:
