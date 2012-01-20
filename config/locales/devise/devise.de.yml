@@ -40,6 +40,6 @@ de:
       confirmation_instructions:
         subject: 'Anleitung zur Bestätigung Ihres Accounts'
       reset_password_instructions:
-        subject: 'Anleitung um das Passwort zurückzusetzten'
+        subject: 'Anleitung um das Passwort neu zu setzen'
       unlock_instructions:
         subject: 'Anleitung um Ihren Account freizuschalten'
