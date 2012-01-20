@@ -23,9 +23,8 @@ def configure
   RSpec.configure do |config|
     config.mock_with :rspec
     config.use_transactional_fixtures = true
-    # Controllers
+    # Macros
     config.extend ControllerMacros, :type => :controller
-    # Helpers
     config.extend ControllerMacros, :type => :helper
   end
 end
