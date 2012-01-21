@@ -35,7 +35,7 @@ Educon::Application.configure do
   # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
   config.assets.allow_debugging                     = true
 
-  config.log_level = :warn
+  config.log_level = :debug
 
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 

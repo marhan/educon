@@ -2,11 +2,6 @@ ENV["RAILS_ENV"] ||= 'test'
 
 require 'rubygems'
 
-unless ENV['TRAVIS']
-  require 'simplecov'
-  SimpleCov.start 'rails'
-end
-
 def configure
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'

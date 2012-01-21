@@ -17,8 +17,8 @@ This project is very new and far away from first release candidate!
 
 [Educon at heroku](http://educon.heroku.com)
 
-User / Password: user@educon.com / password
-
+    User:     user@educon.com
+    Password: password
 
 ## Preconditions
 
@@ -32,7 +32,7 @@ or install PostgreSQL driver with
 
 You will find further information to Heroku and PostgreSQL [here](http://blog.dievolution.net/tipps/tutorial-rails-3-1-heroku/)
 
-## Run Application in deployment mode
+## Run Application in development environment
 
     $> bundle exec rake db:migrate
     $> bundle exec rake rd:seed
@@ -55,22 +55,5 @@ Installed Firefox web browser is needed!
 ## Run all tests in once
 
     $> bundle exec rake
-
-## Run Metrics
-
-shows several metrics with [metrical](http://iain.nl/easier-metricfu-with-metrical)
-
-    $> bundle exec metrical
-
-shows code coverage of rspec tests with [simplecov](https://github.com/colszowka/simplecov)
-
-    $> bundle exec rspec spec
-    $> open coverage/index.html
-
-shows best practices hints with [rails-bestpractices](http://rails-bestpractices.com/)
-
-    $> rails_best_practices -f html --with-textmate
-    $> open rails_best_practices_output.html
-
 
 

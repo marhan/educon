@@ -9,9 +9,9 @@
 
       = get_devise_error_messages
 
-      = f.hidden_field :reset_password_token
+      = f.hidden_field :reset_password_token, :id => 'field_reset_password_token'
 
-      %fieldset
+      %fieldset#fieldset_password_reset
 
         .clearfix
           = f.label :password, t('form.label.password.new'), :for => 'xlInput', :id => 'label_password_new'

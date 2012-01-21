@@ -2,12 +2,6 @@ ENV["RAILS_ENV"] ||= 'test'
 
 require 'rubygems'
 
-unless ENV['TRAVIS']
-  require 'simplecov'
-  SimpleCov.start 'rails'
-end
-
-
 def configure
   require File.expand_path("../../../config/environment", __FILE__)
   require 'rspec/rails'
@@ -16,10 +10,6 @@ def configure
 
   ActiveSupport::Dependencies.clear
   ActiveRecord::Base.instantiate_observers
-
-  # selenium
-  Capybara.default_driver = :selenium
-  Capybara.current_session.driver.browser.manage.window.resize_to(1100, 800)
 end
 
 def run

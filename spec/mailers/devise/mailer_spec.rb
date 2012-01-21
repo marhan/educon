@@ -17,8 +17,11 @@ describe "Mailer" do
   end
 
   it "should contain the link to the new password page" do
-    url = "http://localhost:3000/users/password/edit?reset_password_token=123_password_token"
     @email.should have_body_text(/http:\/\/.*\/users\/password\/edit\?reset_password_token=123token/)
+  end
+
+  it "should contain the id 'link_reset_password'" do
+    @email.should have_body_text(/id="link_reset_password"/)
   end
 
   it "should have the correct subject" do

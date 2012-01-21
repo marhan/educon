@@ -36,9 +36,9 @@ group :development do
   gem "launchy"
   unless ENV['TRAVIS']
     # metrics
-    gem 'metrical'
-    gem "simplecov", :require => false
-    gem "rails_best_practices"
+    #gem 'metrical'
+    #gem "simplecov"
+    #gem "rails_best_practices"
   end
 end
 
@@ -57,4 +57,8 @@ group :test do
     gem 'guard-migrate'
     gem "growl_notify"
   end
+end
+
+group :development, :test do
+  gem 'seed-fu', '~> 2.1.0'
 end
