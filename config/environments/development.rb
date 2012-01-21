@@ -41,9 +41,9 @@ Educon::Application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings   = {
-      :address              => "smtp.gmail.com",
+      :address              => "smtp.1und1.de",
       :port                 => 587,
-      :domain               => 'educon.com',
+      :domain               => 'educon.heroku.com',
       :user_name            => ENV['email_user_name'],
       :password             => ENV['email_user_password'],
       :authentication       => 'plain',
