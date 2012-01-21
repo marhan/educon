@@ -48,6 +48,7 @@ group :test do
   gem "factory_girl_rails", ">= 1.2"
   gem "database_cleaner"
   gem "capybara"
+  gem "capybara-webkit"
   gem 'email_spec'
 
   unless ENV['TRAVIS']

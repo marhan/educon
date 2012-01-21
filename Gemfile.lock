@@ -53,6 +53,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    capybara-webkit (0.8.0)
+      capybara (>= 1.0.0, < 1.2)
+      json
     childprocess (0.3.0)
       ffi (~> 1.0.6)
     coderay (0.9.8)
@@ -246,6 +249,7 @@ DEPENDENCIES
   activeadmin
   bootstrap-sass
   capybara
+  capybara-webkit
   coffee-rails
   database_cleaner
   devise
