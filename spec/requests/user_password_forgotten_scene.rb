@@ -26,10 +26,10 @@ describe "Given User is not singed in," do
         click_button 'Email mit Anweisungen senden'
       end
 
-      #it "than he will see the flash message 'Hinweis Sie erhalten ...'" do
-      #  current_path.should == new_user_session_path
-      #  find("#flash_message").should have_content("Hinweis Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie ihr Passwort zurücksetzten können.")
-      #end
+      it "than he will see the flash message 'Hinweis Sie erhalten ...'" do
+        current_path.should == new_user_session_path
+        find("#flash_message").should have_content("Hinweis Sie erhalten in wenigen Minuten eine E-Mail mit der Anleitung, wie Sie ihr Passwort zurücksetzten können.")
+      end
 
       it "than he receives an email with instructions and reset his password" do
         email = get_send_emails.first
