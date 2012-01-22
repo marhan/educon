@@ -15,13 +15,13 @@ def get_send_emails
   ActionMailer::Base.deliveries
 end
 
-def get_password_reset_hyperlink(email)
+def extract_password_reset_hyperlink(email)
   regex = /<a[\s]+[^>]*?href[\s]?=[\s\""\']+(.*?)[\""\']+.*?link_reset_password.*?>([^<]+|.*?)?<\/a>/
   email_body_text = email.default_part_body.to_s
   matches = email_body_text.scan(regex)
   matches.first.first
 end
 
-def get_password_token(url)
+def extract_password_token(url)
   url.scan(/reset_password_token=(.*)/).first
 end
