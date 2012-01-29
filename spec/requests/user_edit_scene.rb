@@ -1,6 +1,5 @@
 # encoding: utf-8
 require 'requests/spec_helper'
-require 'requests/support/request_macros'
 
 describe "Given user is signed in" do
 
