@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_signed_in
 
-  protected
-
   def layout_by_signed_in
     if user_signed_in?
       "application"
