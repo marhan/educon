@@ -20,6 +20,5 @@ module Educon
         "be a password forgotten email for #{user}"
       end
     end
-
   end
 end
