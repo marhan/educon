@@ -4,3 +4,4 @@
 //= require modernizr
 $(".alert-message").alert()
 $(".alert-message").alert('close')
+$('#topbar').dropdown()

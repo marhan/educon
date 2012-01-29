@@ -13,13 +13,13 @@ module Educon
   class Application < Rails::Application
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    config.time_zone = 'Berlin'
+    config.time_zone         = 'Berlin'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    config.i18n.load_path += Dir[File.join(Rails.root, 'config', 'locales', '**', '*.{rb,yml}')]
-    
+    config.i18n.load_path    += Dir[File.join(Rails.root, 'config', 'locales', '**', '*.{rb,yml}')]
+
     # german only
-    config.i18n.locale = config.i18n.default_locale = :de
+    config.i18n.locale       = config.i18n.default_locale = :de
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding          = "utf-8"
@@ -51,6 +51,5 @@ module Educon
       g.template_engine :haml
       g.stylesheet_engine = :scss
     end
-
   end
 end

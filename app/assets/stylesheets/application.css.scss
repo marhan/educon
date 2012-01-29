@@ -1,6 +1,12 @@
 @import "bootstrap";
 
 html {
+
+    body {
+        padding-top: 60px;}
+}
+
+html#signed_out {
     background-color: #EEEEEE;
 
     body {

@@ -3,8 +3,40 @@
   %head
     = render "shared/meta"
     %body
-      = render "shared/header"
-      .container
+      = render "shared/topbar_signed_in"
+      .container-fluid
         .content
           = render "shared/flashes"
           = yield
+        .sidebar
+          .well
+            %h5 Sidebar
+            %ul
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+            %h5 Sidebar
+            %ul
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link
+            %h5 Sidebar
+            %ul
+              %li
+                %a{:href => "#"} Link
+              %li
+                %a{:href => "#"} Link

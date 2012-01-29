@@ -1,0 +1,30 @@
+#topbar.topbar
+  .topbar-inner
+    .container-fluid
+      %a.brand{:href => "/"} Educon
+      %ul.nav
+        = get_top_bar_menu_item(t('topbar.menu.item.home'), home_path)
+        = get_top_bar_menu_item(t('topbar.menu.item.wiki'), "https://github.com/marhan/educon/wiki")
+        %li.dropdown{:data  => {"dropdown" => 'dropdown'}}
+          %a.dropdown-toggle{:href => "#"} Verwaltung
+          %ul.dropdown-menu
+            %li
+              %a{:href => "#"} Mitarbeiter
+            %li.divider
+            %li
+              %a{:href => "#"} Klienten
+            %li
+              %a{:href => "#"} Auftraggeber
+            %li
+              %a{:href => "#"} Organisationen
+            %li
+              %a{:href => "#"} Ansprechpartner
+      %div{:class => "nav secondary-nav"}
+        %ul
+          %li
+            %p
+              = t('topbar.signed_in_as')
+          %li
+            %a{:href => edit_user_registration_path, :id => "link_edit_account"}
+              = current_user.email
+          = get_top_bar_menu_item(t('topbar.menu.item.sign.out'), destroy_user_session_path)
