@@ -7,10 +7,6 @@ def sign_in_as(email, password)
   find("#topbar").should have_content("Eingeloggt als #{email}")
 end
 
-def clear_email_cache
-  ActionMailer::Base.deliveries.clear
-end
-
 def extract_password_reset_hyperlink(email)
   regex = /<a[\s]+[^>]*?href[\s]?=[\s\""\']+(.*?)[\""\']+.*?link_reset_password.*?>([^<]+|.*?)?<\/a>/
   email_body_text = email.default_part_body.to_s
@@ -21,8 +17,3 @@ end
 def extract_password_token(url)
   url.scan(/reset_password_token=(.*)/).first
 end
-
-def extract_url_without_params(url)
-  url.scan(/(.*)\?.*/).first.first
-end
-
