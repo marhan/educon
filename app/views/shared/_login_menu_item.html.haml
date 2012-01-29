@@ -1,5 +1,5 @@
 = form_for("user", :id => "form_login" ,:url => user_session_path,:html => { :class => "pull-right"}) do |f|
-  = f.email_field :email, :id => "field_email", :class => 'input-medium', :placeholder => t('form.placeholder.email')
+  = f.email_field :email, :id => "field_email", :class => 'span4', :placeholder => t('form.placeholder.email')
   = f.password_field :password, :id => "field_password", :class => 'input-medium', :placeholder => t('form.placeholder.password')
   %button.btn{:type => "submit", :id => 'button_sign_in'}
     = t('topbar.menu.item.sign.in')
