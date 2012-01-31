@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "rails", "3.1"
+gem "rails", "3.1.3"
 gem "sqlite3"
 gem "jquery-rails"
 gem "haml"
@@ -8,7 +8,7 @@ gem "haml"
 gem "bootstrap-sass"
 # avoiding version 1.3.4
 # http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
-gem "rack", "1.3.3"
+gem "rack", "~> 1.3.5"
 gem "devise"
 gem "activeadmin"
 # moved out of assets, due active admin init problems
