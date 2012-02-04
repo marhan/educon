@@ -39,7 +39,7 @@ describe Client do
       client.should_not be_valid
     end
 
-    it "last == nil, then client is not valid" do
+    it "lastname == nil, then client is not valid" do
       client = Client.new(@attr.merge(:lastname => nil))
       client.should_not be_valid
     end
