@@ -16,16 +16,6 @@
       %fieldset#fieldset_sign_up
 
         .clearfix
-          = f.label t('form.label.firstname'), :for => 'xlInput', :id => 'label_firstname'
-          .input
-            = f.text_field :firstname, :class => 'xlarge', :id => 'field_firstname'
-
-        .clearfix
-          = f.label t('form.label.lastname'), :for => 'xlInput', :id => 'label_lastname'
-          .input
-            = f.text_field :lastname, :class => 'xlarge', :id => 'field_lastname'
-
-        .clearfix
           = f.label t('form.label.email'), :for => 'xlInput', :id => 'label_email'
           .input
             = f.text_field :email, :class => 'xlarge', :id => 'field_email'

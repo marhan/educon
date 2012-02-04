@@ -2,8 +2,6 @@ require 'factory_girl'
 
 FactoryGirl.define do
   factory :user, :class => User do
-    firstname 'firstname'
-    lastname 'lastname'
     email 'user@educon.com'
     password 'password'
     password_confirmation 'password'
@@ -15,8 +13,6 @@ FactoryGirl.define do
   end
 
   factory :devise_resource, :class => User do
-    firstname 'firstname'
-    lastname 'lastname'
     email 'user@educon.com'
     password 'password'
     password_confirmation 'password'

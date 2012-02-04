@@ -14,8 +14,7 @@ describe UsersController do
 
       it "should be the expected user" do
         expected_user = FactoryGirl.build(:user)
-        @controller.current_user.firstname.should == expected_user.firstname
-        @controller.current_user.lastname.should == expected_user.lastname
+        @controller.current_user.email.should == expected_user.email
       end
 
     end

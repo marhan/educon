@@ -50,9 +50,9 @@ de:
   registrations:
     new:
       heading: "Willkommen"
-      subheading: "hier kannst du dein Profil erstellen"
+      subheading: "hier kannst du dich registrieren"
     edit:
-      heading: "Dein Profil"
+      heading: "Deine Anmeldedaten"
       subheading: ""
   passwords:
     forgotten:

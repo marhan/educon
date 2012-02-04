@@ -1,8 +1,6 @@
 puts 'Create the default user'
 
-user = User.create! :firstname => 'Fritz',
-                    :lastname => 'Brause',
-                    :email => 'fritz.brause@educon.com',
+user = User.create! :email => 'fritz.brause@educon.com',
                     :password => 'password',
                     :password_confirmation => 'password'
 

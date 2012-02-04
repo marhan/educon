@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def home
-    logger.info "User '#{user_name}' visits his home site"
+    logger.info "User '#{user_login_name}' visits his home site"
   end
+
 
 end

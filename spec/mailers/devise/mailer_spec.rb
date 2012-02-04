@@ -13,7 +13,7 @@ describe "Mailer" do
   end
 
   it "should contain the user's message in the mail body" do
-    @email.should have_body_text(/Hallo #{@user.firstname} #{@user.lastname}/)
+    @email.should have_body_text(/Hallo #{@user.email}/)
   end
 
   it "should contain the link to the new password page" do

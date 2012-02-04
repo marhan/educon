@@ -18,12 +18,10 @@ describe "Given user is not signed up" do
 
       it "than he see the correct page header" do
         find("#page_title").should have_content("Willkommen")
-        find("#page_title").should have_content("hier kannst du dein Profil erstellen")
+        find("#page_title").should have_content("hier kannst du dich registrieren")
       end
 
       it "than he see the sign up form" do
-        find("#label_firstname").should have_content "Vorname"
-        find("#label_lastname").should have_content "Nachname"
         find("#label_email").should have_content "Email"
         find("#label_password").should have_content "Passwort"
         find("#label_password_confirmation").should have_content "Passwort"
@@ -44,8 +42,6 @@ describe "Given user is not signed up" do
 
       before(:each) do
         within_fieldset('fieldset_sign_up') do
-          fill_in('field_firstname', :with => 'Testy')
-          fill_in('field_lastname', :with => 'McUserton')
           fill_in('field_email', :with => 'user@test.com')
           fill_in('field_password', :with => 'please')
           fill_in('field_password_confirmation', :with => 'please')
@@ -59,8 +55,6 @@ describe "Given user is not signed up" do
         end
 
         it "than all entered data is removed", :js => true do
-          find("#fieldset_sign_up").find_field('field_firstname').value.should == ""
-          find("#fieldset_sign_up").find_field('field_lastname').value.should == ""
           find("#fieldset_sign_up").find_field('field_email').value.should == ""
           find("#fieldset_sign_up").find_field('field_password').value.should == ""
           find("#fieldset_sign_up").find_field('field_password_confirmation').value.should == ""
@@ -90,8 +84,6 @@ describe "Given user is not signed up" do
 
       before(:each) do
         within_fieldset('fieldset_sign_up') do
-          fill_in('field_firstname', :with => 'Testy')
-          fill_in('field_lastname', :with => 'McUserton')
           fill_in('field_email', :with => 'invalidemail')
           fill_in('field_password', :with => 'please')
           fill_in('field_password_confirmation', :with => 'please')
@@ -109,8 +101,6 @@ describe "Given user is not signed up" do
 
       before(:each) do
         within_fieldset('fieldset_sign_up') do
-          fill_in('field_firstname', :with => 'Testy')
-          fill_in('field_lastname', :with => 'McUserton')
           fill_in('field_email', :with => 'invalidemail')
           fill_in('field_password', :with => '')
           fill_in('field_password_confirmation', :with => 'please')
@@ -128,8 +118,6 @@ describe "Given user is not signed up" do
 
       before(:each) do
         within_fieldset('fieldset_sign_up') do
-          fill_in('field_firstname', :with => 'Testy')
-          fill_in('field_lastname', :with => 'McUserton')
           fill_in('field_email', :with => 'invalidemail')
           fill_in('field_password', :with => 'please')
           fill_in('field_password_confirmation', :with => '')

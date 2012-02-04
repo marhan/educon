@@ -17,13 +17,10 @@ describe "Given user is signed in" do
     describe "when the page is rendered" do
 
       it "than he should see the correct page header" do
-        expected_content = "Dein Profil #{@user.firstname} #{@user.lastname}"
-        find("h1").should have_content(expected_content);
+        find("h1").should have_content("Deine Anmeldedaten");
       end
 
       it "than he should see the edit form" do
-        find("#label_firstname").should have_content "Vorname"
-        find("#label_lastname").should have_content "Nachname"
         find("#label_email").should have_content "Email"
         find("#label_password_new").should have_content "Neues Passwort"
         find("#label_password_new_confirmation").should have_content "Neues Passwort"
@@ -39,8 +36,6 @@ describe "Given user is signed in" do
     describe "when he edit his name and email with current password," do
 
       before(:each) do
-        fill_in('field_firstname', :with => 'foz')
-        fill_in('field_lastname', :with => 'baz')
         fill_in('field_email', :with=> 'foz.baz@test.com')
         fill_in('field_current_password', :with=> @user.password)
         click_button "Speichern"
@@ -59,8 +54,6 @@ describe "Given user is signed in" do
     describe "when he edit his name and email without current password," do
 
       before(:each) do
-        fill_in('field_firstname', :with => 'foz')
-        fill_in('field_lastname', :with => 'baz')
         fill_in('field_email', :with=> 'foz.baz@test.com')
         click_button "Speichern"
       end
