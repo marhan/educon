@@ -20,7 +20,7 @@ guard :bundler do
   watch('Gemfile')
 end
 
-guard :migrate do
-  watch(%r{^db/migrate/(\d+).+\.rb})
-end
+#guard :migrate do
+#  watch(%r{^db/migrate/(\d+).+\.rb})
+#end
 
