@@ -4,7 +4,7 @@ def sign_in_as(email, password)
   fill_in("field_email", :with => email)
   fill_in("field_password", :with => password)
   click_button("button_sign_in")
-  find("#topbar").should have_content("Eingeloggt als #{email}")
+  find("#topbar").should have_content("Angemeldet als #{email}")
 end
 
 def extract_password_reset_hyperlink(email)

@@ -7,7 +7,7 @@ describe "Given User" do
 
     before(:each) {
       visit '/'
-      find("#topbar").find("form").should have_button "Einloggen"
+      find("#topbar").find("form").should have_button "Anmelden"
       find_field('field_email')['placeholder'].should == "Email"
       find_field('field_password')['placeholder'].should == "Passwort"
     }
@@ -23,7 +23,7 @@ describe "Given User" do
         before(:each) do
           fill_in("field_email", :with => "user@not-signed-in.com")
           fill_in("field_password", :with => "please")
-          click_button("Einloggen")
+          click_button("Anmelden")
         end
 
         it "than he see the flash message 'Warnung Ungültige Anmeldedaten'" do
@@ -32,8 +32,8 @@ describe "Given User" do
 
         it "than he is still signed out" do
           find("#topbar").should have_content("Registrieren")
-          find("#topbar").find("form").should have_button "Einloggen"
-          find("#topbar").should_not have_content("Eingeloggt als")
+          find("#topbar").find("form").should have_button "Anmelden"
+          find("#topbar").should_not have_content("Angemeldet als")
         end
       end
     end
@@ -48,7 +48,7 @@ describe "Given User" do
         before(:each) do
           fill_in("field_email", :with => @user.email)
           fill_in("field_password", :with => "wrong-password")
-          click_button("Einloggen")
+          click_button("Anmelden")
         end
 
         it "than he see the flash message 'Warnung Ungültige Anmeldedaten'" do
@@ -56,9 +56,9 @@ describe "Given User" do
         end
 
         it "than he should still signed out" do
-          find("#topbar").find("form").should have_button "Einloggen"
+          find("#topbar").find("form").should have_button "Anmelden"
           find("#topbar").should have_content("Registrieren")
-          find("#topbar").should_not have_content("Eingeloggt als")
+          find("#topbar").should_not have_content("Angemeldet als")
         end
       end
 
@@ -67,15 +67,15 @@ describe "Given User" do
         before(:each) do
           fill_in("field_email", :with => @user.email)
           fill_in("field_password", :with => @user.password)
-          click_button("Einloggen")
+          click_button("Anmelden")
         end
 
         it "then he should see the flash message 'Hinweis Erfolgreich angemeldet. '" do
           find("#flash_message").should have_content("Hinweis Erfolgreich angemeldet")
         end
 
-        it "then he should see 'Eingeloggt als ...'" do
-          find("#topbar").should have_content("Eingeloggt als #{@user.email}")
+        it "then he should see 'Angemeldet als ...'" do
+          find("#topbar").should have_content("Angemeldet als #{@user.email}")
         end
       end
     end

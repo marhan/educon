@@ -34,7 +34,7 @@ describe "Given User is not singed in," do
         user_fills_password_reset_with 'new_password'
         find("#flash_message").should have_content("Hinweis Ihr Passwort wurde geändert. Sie sind angemeldet.")
         
-        click_link('Ausloggen')
+        click_link('Abmelden')
         sign_in_as(@user.email, 'new_password')
         current_path.should == root_path
         find("#flash_message").should have_content("Hinweis Erfolgreich angemeldet")

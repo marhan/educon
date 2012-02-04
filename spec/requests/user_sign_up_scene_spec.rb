@@ -69,7 +69,7 @@ describe "Given user is not signed up" do
         end
 
         it "than he signed up successfully" do
-          find("#topbar").should have_content("Eingeloggt als user@test.com")
+          find("#topbar").should have_content("Angemeldet als user@test.com")
         end
 
         it "than he should see flash message 'Hinweis Sie haben sich erfolgreich registriert.'" do

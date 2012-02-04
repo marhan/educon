@@ -11,7 +11,7 @@ describe "Given user is signed in," do
   describe "when he signing out," do
 
     before(:each) do
-      click_link("Ausloggen")
+      click_link("Abmelden")
     end
 
     it "then he should see the flash message 'Hinweis Erfolgreich abgemeldet.'" do
@@ -20,8 +20,8 @@ describe "Given user is signed in," do
 
     it "than he should be signed out" do
       find("#topbar").should have_content("Registrieren")
-      find("#topbar").find("form").should have_button "Einloggen"
-      find("#topbar").should_not have_content("Eingeloggt als")
+      find("#topbar").find("form").should have_button "Anmelden"
+      find("#topbar").should_not have_content("Angemelet als")
     end
   end
 

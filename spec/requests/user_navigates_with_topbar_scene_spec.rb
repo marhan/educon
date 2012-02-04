@@ -20,7 +20,7 @@ describe "Given User" do
         find("#topbar").find("a.brand").should have_content("Educon")
         find("#topbar").find_link("Home")
         find("#topbar").find_link("Wiki")
-        find("#topbar").find_link("Ausloggen")
+        find("#topbar").find_link("Abmelden")
       end
 
     end
@@ -31,7 +31,7 @@ describe "Given User" do
 
     before(:each) do
       visit '/'
-      find("#topbar").should_not have_content("Eingeloggt als")
+      find("#topbar").should_not have_content("Angemeldet als")
     end
 
     describe "when he clicks the link 'Home'," do

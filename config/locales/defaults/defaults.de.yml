@@ -5,13 +5,13 @@ de:
         home: 'Home'
         help: 'Hilfe'
         sign:
-          out: 'Ausloggen'
+          out: 'Abmelden'
           up: 'Registrieren'
-          in: 'Einloggen'
+          in: 'Anmelden'
         password:
           forgotten: "Passwort vergessen"
         wiki: "Wiki"
-    signed_in_as: "Eingeloggt als"
+    signed_in_as: "Angemeldet als"
   form:
     placeholder:
       email: 'Email'

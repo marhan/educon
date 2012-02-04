@@ -42,7 +42,7 @@ describe "Given user is signed in" do
       end
 
       it "than the new account data should be applied" do
-        find("#topbar").should have_content("Eingeloggt als foz.baz@test.com")
+        find("#topbar").should have_content("Angemeldet als foz.baz@test.com")
       end
 
       it "than he should see the flash message 'Hinweis Die Angaben wurden erfolgreich geändert.'" do
@@ -63,7 +63,7 @@ describe "Given user is signed in" do
       end
 
       it "than the original data should still be applied" do
-        find("#topbar").should have_content("Eingeloggt als #{@user.email}")
+        find("#topbar").should have_content("Angemeldet als #{@user.email}")
       end
 
     end
