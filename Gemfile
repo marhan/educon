@@ -10,7 +10,7 @@ gem "bootstrap-sass"
 # http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
 gem "rack", "~> 1.3.5"
 gem "devise"
-gem "activeadmin"
+gem "activeadmin", "~> 0.4.0"
 # moved out of assets, due active admin init problems
 # http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
 gem "sass-rails"
