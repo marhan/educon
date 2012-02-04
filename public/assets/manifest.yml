@@ -1,5 +1,7 @@
 ---
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
+application.js: application-d8870c8069f41a0ebfc6f9fa2e4a3e67.js
+application.css: application-d061d9d785445b21131ceab1c26e28e4.css
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-d3076b67b8655afc5cf14bf244c34db5.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-c73514e723fd274903d96ff0afd8e7f7.png
 active_admin/datepicker/datepicker-input-icon.png: active_admin/datepicker/datepicker-input-icon-e48beac5b8da2344985c5d2afe6159dd.png
@@ -10,7 +12,4 @@ active_admin/loading.gif: active_admin/loading-c20cbb5cb54528680d74c8f7a393b3e3.
 active_admin/nested_menu_arrow.gif: active_admin/nested_menu_arrow-7093fa8e6f12c2a688313e17f6182da9.gif
 active_admin/nested_menu_arrow_dark.gif: active_admin/nested_menu_arrow_dark-37327cd654d1a4d1bbef43afbeed01da.gif
 active_admin/orderable.png: active_admin/orderable-312cf8ad195f38825b0fb3d7447aef58.png
-jquery-ui.min.js: jquery-ui.min-8b9c16ed13b920aebcfef3197711f61b.js
-jquery.min.js: jquery.min-e3cda086d77f5617dc07d5ee81cee7b2.js
-application.js: application-d8870c8069f41a0ebfc6f9fa2e4a3e67.js
-application.css: application-d061d9d785445b21131ceab1c26e28e4.css
+active_admin/application.js: active_admin/application-18e7720340ea8813b09e2d50a65ca6df.js
