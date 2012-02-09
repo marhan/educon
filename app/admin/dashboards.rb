@@ -2,8 +2,8 @@ ActiveAdmin::Dashboards.build do
 
   section "Newest Users", :priority => 1 do
     table_for User.order('created_at desc').limit(10).each do |user|
-      column(:firstname) { |user| link_to(user.firstname, admin_user_path(user)) }
-      column(:lastname) { |user| link_to(user.lastname, admin_user_path(user)) }
+      column(:first_name) { |user| link_to(user.firstname, admin_user_path(user)) }
+      column(:last_name) { |user| link_to(user.lastname, admin_user_path(user)) }
       column(:email) { |user| link_to(user.email, admin_user_path(user)) }
     end
   end

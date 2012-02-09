@@ -49,5 +49,35 @@ describe Client do
       client.should_not be_valid
     end
 
+    it "street == nil, then user is not valid" do
+      user = User.new(@attr.merge(:street => nil))
+      user.should_not be_valid
+    end
+
+    it "street == empty, then user is not valid" do
+      user = User.new(@attr.merge(:street => ""))
+      user.should_not be_valid
+    end
+
+    it "house_number == nil, then user is not valid" do
+      user = User.new(@attr.merge(:house_number => nil))
+      user.should_not be_valid
+    end
+
+    it "house_number == empty, then user is not valid" do
+      user = User.new(@attr.merge(:house_number => ""))
+      user.should_not be_valid
+    end
+
+    it "city == nil, then user is not valid" do
+      user = User.new(@attr.merge(:city => nil))
+      user.should_not be_valid
+    end
+
+    it "city == empty, then user is not valid" do
+      user = User.new(@attr.merge(:city => ""))
+      user.should_not be_valid
+    end
+
   end
 end

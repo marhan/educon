@@ -7,7 +7,15 @@ describe User do
     @attr = {
         :email                 => "user@model.test",
         :password              => "foobar",
-        :password_confirmation => "foobar"
+        :password_confirmation => "foobar",
+        :first_name            => "Frank",
+        :last_name             => "Testa",
+        :street                => "Finksweg",
+        :house_number          => "1a",
+        :zip_code              => "21128",
+        :city                  => "Stade",
+        :phone                 => "04021112",
+        :mobile_phone          => "01279987"
     }
   end
 
@@ -20,6 +28,11 @@ describe User do
     it "should require an email address" do
       no_email_user = User.new(@attr.merge(:email => ""))
       no_email_user.should_not be_valid
+    end
+
+    it "email == nil, then user is not valid" do
+      user = User.new(@attr.merge(:email => nil))
+      user.should_not be_valid
     end
 
     it "should accept valid email addresses" do
