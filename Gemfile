@@ -28,7 +28,6 @@ gem "haml-rails", :group => :development
 gem "pry", :group => :development
 gem "launchy", :group => :development
 
-gem "rspec-rails", :group => :test
 gem "turn", :require => false, :group => :test
 gem "factory_girl_rails", ">= 1.2", :group => :test
 gem "database_cleaner", :group => :test
@@ -36,6 +35,7 @@ gem "capybara", :group => :test
 gem "capybara-webkit", :group => :test
 gem "email_spec", :group => :test
 
+gem "rspec-rails", :group => [:development, :test]
 gem "seed-fu", "~> 2.1.0", :group => [:development, :test]
 
 # not running on travis-ci
