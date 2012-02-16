@@ -19,18 +19,4 @@ FactoryGirl.define do
     reset_password_token '123token'
   end
 
-  factory :client, :class => Client do
-    firstname 'Frank'
-    lastname 'Testa'
-    street 'Teststreet'
-    house_number '45a'
-    zip_code '21120'
-    city 'Buxtehude'
-    fon '04231344'
-    mobil '017111111'
-    email 'test@testa.com'
-    nationality 'italienisch'
-    spoken_language 'englisch'
-  end
-
 end
