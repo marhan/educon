@@ -20,6 +20,7 @@ FactoryGirl.define do
   end
 
   factory :employee, :class => User do
+    employee true
     email 'employee@educon.com'
     password 'password'
     password_confirmation 'password'
