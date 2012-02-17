@@ -19,4 +19,18 @@ FactoryGirl.define do
     reset_password_token '123token'
   end
 
+  factory :employee, :class => User do
+    email 'employee@educon.com'
+    password 'password'
+    password_confirmation 'password'
+    first_name 'Frank'
+    last_name 'Testa'
+    street 'Finksweg'
+    house_number '1a'
+    zip_code '21128'
+    city 'Stade'
+    phone '04021112'
+    mobile_phone '01279987'
+  end
+
 end

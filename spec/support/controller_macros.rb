@@ -7,6 +7,14 @@ module ControllerMacros
       sign_in user
     end
   end
+
+  def signin_employee
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:employee]
+      employee                       = FactoryGirl.create(:employee)
+      sign_in employee
+    end
+  end
 end
 
 RSpec.configure do |config|
