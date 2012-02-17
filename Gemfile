@@ -16,6 +16,9 @@ gem "activeadmin", "~> 0.4.0"
 gem "sass-rails"
 gem "meta_search", ">= 1.1.0.pre"
 gem "jquery-rails"
+
+gem "cancan"
+
 # Gems used only for assets and not required in production environments by default.
 gem "coffee-rails", :group => :assets
 gem "uglifier", :group => :assets
