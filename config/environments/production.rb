@@ -29,7 +29,7 @@ Educon::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = {:host => 'educon.heroku.com'}
+  config.action_mailer.default_url_options = { :host => 'educon.heroku.com' }
 
   config.action_mailer.delivery_method = :smtp
 
@@ -37,11 +37,12 @@ Educon::Application.configure do
       :address              => "smtp.1und1.de",
       :port                 => 587,
       :domain               => 'educon.heroku.com',
-      :user_login_name            => ENV['email_user_name'],
+      :user_login_name      => ENV['email_user_name'],
       :password             => ENV['email_user_password'],
       :authentication       => 'plain',
-      :enable_starttls_auto => true}
+      :enable_starttls_auto => true }
 
   config.log_level = :info
+  config.log_tags  = [:uuid, :remote_ip]
 
 end

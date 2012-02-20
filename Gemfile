@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "rails", "3.1.3"
+gem "rails", "3.2.0"
 gem "sqlite3"
 gem "jquery-rails"
 gem "haml"
@@ -8,20 +8,19 @@ gem "haml"
 gem "bootstrap-sass"
 # avoiding version 1.3.4
 # http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
-gem "rack", "~> 1.3.5"
+gem "rack"
 gem "devise"
-gem "activeadmin", "~> 0.4.0"
-# moved out of assets, due active admin init problems
-# http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
-gem "sass-rails"
-gem "meta_search", ">= 1.1.0.pre"
+gem "activeadmin"
+gem "meta_search"
 gem "jquery-rails"
-
 gem "cancan"
 
+# moved out of assets, due active admin init problems
+# http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
+gem "sass-rails", "~> 3.2.3"
 # Gems used only for assets and not required in production environments by default.
-gem "coffee-rails", :group => :assets
-gem "uglifier", :group => :assets
+gem "coffee-rails", "~> 3.2.1", :group => :assets
+gem "uglifier", "~> 1.0.3",:group => :assets
 
 gem "pg", "~> 0.11.0", :group => :production
 gem "therubyracer", :group => :production
@@ -39,7 +38,7 @@ gem "capybara-webkit", :group => :test
 gem "email_spec", :group => :test
 
 gem "rspec-rails", :group => [:development, :test]
-gem "seed-fu", "~> 2.1.0", :group => [:development, :test]
+gem "seed-fu", :group => [:development, :test]
 
 # not running on travis-ci
 unless ENV['TRAVIS']
