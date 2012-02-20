@@ -1,45 +1,37 @@
-.page-header
-  = render "shared/flashes"
-  %h1#page_title
-    =t('registrations.new.heading')
-    %small
-      = t('registrations.new.subheading')
-.row
-  .span10
-    %h2
-      = t('form.title.sign.up')
+.span9
+  .hero-unit
+    .page-header
+      = render "shared/flashes"
+      %h2#page_title
+        =t('registrations.new.heading')
+        %small
+          = t('registrations.new.subheading')
+    .row-fluid
 
-    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
 
-      = get_devise_error_messages
+        = get_devise_error_messages
 
-      %fieldset#fieldset_sign_up
+        %fieldset#fieldset_sign_up
 
-        .clearfix
-          = f.label t('form.label.email'), :for => 'xlInput', :id => 'label_email'
-          .input
-            = f.text_field :email, :class => 'xlarge', :id => 'field_email'
+          .clearfix
+            = f.label t('form.label.email'), :for => 'xlInput', :id => 'label_email'
+            .input
+              = f.text_field :email, :class => 'xlarge', :id => 'field_email'
 
-        .clearfix
-          = f.label t('form.label.password.default'), :for => 'xlInput', :id => 'label_password'
-          .input
-            = f.password_field :password, :id => 'field_password'
+          .clearfix
+            = f.label t('form.label.password.default'), :for => 'xlInput', :id => 'label_password'
+            .input
+              = f.password_field :password, :id => 'field_password'
 
-        .clearfix
-          = f.label t('form.label.password.default'), :for => 'xlInput', :id => 'label_password_confirmation'
-          .input
-            = f.password_field :password_confirmation, :id => 'field_password_confirmation'
-            %span.help-inline#help_password_confirmation
-              = t('form.help.password_confirmation')
+          .clearfix
+            = f.label t('form.label.password.default'), :for => 'xlInput', :id => 'label_password_confirmation'
+            .input
+              = f.password_field :password_confirmation, :id => 'field_password_confirmation'
+              %span.help-inline#help_password_confirmation
+                = t('form.help.password_confirmation')
 
-        .actions
-          = f.submit t('form.button.register'), :class => 'btn primary', :id=>'button_signup'
-          %button{:type=>'reset', :class => 'btn', :id=>'button_reset'}
-            = t('form.button.reset')
-
-  .span4#sidebar
-    %h3
-      = t('sidebar.link_list.heading')
-    %p
-      = render "devise/shared/links"
-
+          .actions
+            = f.submit t('form.button.register'), :class => 'btn btn-primary', :id=>'button_signup'
+            %button{:type=>'reset', :class => 'btn', :id=>'button_reset'}
+              = t('form.button.reset')

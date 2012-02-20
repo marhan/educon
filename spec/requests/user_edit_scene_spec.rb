@@ -17,7 +17,7 @@ describe "Given user is signed in" do
     describe "when the page is rendered" do
 
       it "than he should see the correct page header" do
-        find("h1").should have_content("Deine Anmeldedaten");
+        find("h2").should have_content("Ihre Anmeldedaten");
       end
 
       it "than he should see the edit form" do

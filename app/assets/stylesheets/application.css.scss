@@ -1,43 +1,38 @@
+// import original bootstrap
+
 @import "bootstrap";
+@import "responsive";
 
-html {
+html.signed_out {
 
-    body {
-        padding-top: 60px;}
-}
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
 
-html#signed_out {
-    background-color: #EEEEEE;
-
-    body {
-        background-color: #EEEEEE;
-        padding-top: 40px;}
-
-    .container {
-        > footer p {
-        text-align: center;}}
-
-    .content {
-        min-height: 500px;
-        background-color: #FFFFFF;
-        border-radius: 0 0 6px 6px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-        margin: 0 -20px;
-        padding: 20px; }
-
-    .page-header {
-        background-color: #F5F5F5;
-        margin: -20px -20px 20px;
-        padding: 20px 20px 10px; }
-}
-
-ul.impressum {
-    list-style: none;
-    margin-left: 0;
-
-    li {
-        display: block;
-        float: left;
-        padding-right: 10px;
+    .navbar {
+      input {
+        margin-bottom: 2px;
+      }
+      button {
+        margin-bottom: 8px;
+      }
     }
+  }
 }
+
+html.signed_in {
+
+  body {
+
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+    .navbar {
+      a.btn {
+        margin-top: 6px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+

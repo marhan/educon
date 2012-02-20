@@ -4,10 +4,6 @@ gem "rails", "3.2.0"
 gem "sqlite3"
 gem "jquery-rails"
 gem "haml"
-# styles
-gem "bootstrap-sass"
-# avoiding version 1.3.4
-# http://stackoverflow.com/questions/7624661/rake-already-initialized-constant-warning
 gem "rack"
 gem "devise"
 gem "activeadmin"
@@ -18,6 +14,8 @@ gem "cancan"
 # moved out of assets, due active admin init problems
 # http://www.davidlowry.co.uk/400/activeadmin-on-heroku-rails-3-1/
 gem "sass-rails", "~> 3.2.3"
+gem "anjlab-bootstrap-rails", ">= 2.0", :require => "bootstrap-rails"
+
 # Gems used only for assets and not required in production environments by default.
 gem "coffee-rails", "~> 3.2.1", :group => :assets
 gem "uglifier", "~> 1.0.3",:group => :assets
@@ -27,7 +25,6 @@ gem "therubyracer", :group => :production
 
 gem "heroku", :group => :development
 gem "haml-rails", :group => :development
-gem "pry", :group => :development
 gem "launchy", :group => :development
 
 gem "turn", :require => false, :group => :test

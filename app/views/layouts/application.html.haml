@@ -1,42 +1,11 @@
 !!! utf-8
-%html.no-js
+%html.no-js.signed_in
   %head
     = render "shared/meta"
     %body
       = render "shared/topbar_signed_in"
       .container-fluid
-        .content
+        .row-fluid
           = render "shared/flashes"
+          = render "shared/sidebar"
           = yield
-        .sidebar
-          .well
-            %h5 Sidebar
-            %ul
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-            %h5 Sidebar
-            %ul
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link
-            %h5 Sidebar
-            %ul
-              %li
-                %a{:href => "#"} Link
-              %li
-                %a{:href => "#"} Link

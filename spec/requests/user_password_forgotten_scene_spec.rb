@@ -36,7 +36,7 @@ describe "Given User is not singed in," do
         
         click_link('Abmelden')
         sign_in_as(@user.email, 'new_password')
-        current_path.should == root_path
+        current_path.should == home_path
         find("#flash_message").should have_content("Hinweis Erfolgreich angemeldet")
       end
     end

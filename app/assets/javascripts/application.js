@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require modernizr
-$(".alert-message").alert()
-$(".alert-message").alert('close')
+$(".alert").alert()
+$(".alert").alert('close')
 $('#topbar').dropdown()
+$(".collapse").collapse()

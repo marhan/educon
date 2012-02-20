@@ -1,37 +1,31 @@
-.page-header
-  %h1#page_title
-    = t('passwords.forgotten.edit.heading')
-.row
-  .span10
-    %h2
+.span9
+  .hero-unit
+    .page-header
+      %h2#page_title
+        = t('passwords.forgotten.edit.heading')
+    .row-fluit
+      = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
 
-    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+        = get_devise_error_messages
 
-      = get_devise_error_messages
+        = f.hidden_field :reset_password_token, :id => 'field_reset_password_token'
 
-      = f.hidden_field :reset_password_token, :id => 'field_reset_password_token'
+        %fieldset#fieldset_password_reset
 
-      %fieldset#fieldset_password_reset
+          .clearfix
+            = f.label :password, t('form.label.password.new'), :for => 'xlInput', :id => 'label_password_new'
+            .input
+              = f.password_field :password, :id => 'field_password'
 
-        .clearfix
-          = f.label :password, t('form.label.password.new'), :for => 'xlInput', :id => 'label_password_new'
-          .input
-            = f.password_field :password, :id => 'field_password'
+          .clearfix
+            = f.label :password_confirmation, t('form.label.password.new'), :for => 'xlInput', :id => 'label_password_new_confirmation'
+            .input
+              = f.password_field :password_confirmation, :id => 'field_password_confirmation'
+              %span.help-inline#help_password_confirmation
+                = t('form.help.password_confirmation')
 
-        .clearfix
-          = f.label :password_confirmation, t('form.label.password.new'), :for => 'xlInput', :id => 'label_password_new_confirmation'
-          .input
-            = f.password_field :password_confirmation, :id => 'field_password_confirmation'
-            %span.help-inline#help_password_confirmation
-              = t('form.help.password_confirmation')
+          .actions
+            = f.submit t("form.button.save"), :class => 'btn btn-primary'
+            %a.btn{:href => "/", :id => "button_cancel"}
+              = t("form.button.cancel")
 
-        .actions
-          = f.submit t("form.button.save"), :class => 'btn primary'
-          %a.btn{:href => "/", :id => "button_cancel"}
-            = t("form.button.cancel")
-
-  .span4
-    %h3
-      = t('sidebar.link_list.heading')
-    %p
-      = render "devise/shared/links"

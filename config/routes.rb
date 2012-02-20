@@ -5,7 +5,9 @@ Educon::Application.routes.draw do
 
   devise_for :users, :only => [:sessions, :registrations, :passwords]
 
-  match '/home', :to => 'pages#home', :as => :home
+  resources :users
+
+  match '/home', :to => 'users#home', :as => :home
   match '/welcome', :to => 'pages#welcome', :as => :welcome
 
   root :to => 'pages#welcome'

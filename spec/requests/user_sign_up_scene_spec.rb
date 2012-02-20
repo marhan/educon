@@ -18,7 +18,7 @@ describe "Given user is not signed up" do
 
       it "than he see the correct page header" do
         find("#page_title").should have_content("Willkommen")
-        find("#page_title").should have_content("hier kannst du dich registrieren")
+        find("#page_title").should have_content("zum hineinschnuppern, einfach registrieren")
       end
 
       it "than he see the sign up form" do
@@ -30,12 +30,6 @@ describe "Given user is not signed up" do
         find("#fieldset_sign_up").find_button('Anlegen')
         find("#fieldset_sign_up").find_button('Zurücksetzen')
       end
-
-      it "than he see the sidebar" do
-        find("#sidebar").find("h3").should have_content("Verwandte Links")
-        find("#sidebar").find_link('Passwort vergessen?')
-      end
-
     end
 
     describe "when he enters valid data'," do
