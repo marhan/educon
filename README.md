@@ -38,22 +38,11 @@ You will find further information to Heroku and PostgreSQL [here](http://blog.di
     $> bundle exec rake rd:seed
     $> rails s
 
-## Run rspec unit tests
+## Run rspec tests
 
-    $> bundle exec rake unit
+    $> bundle exec rake
 
 ...or with guard...
 
     $> guard
-
-## Run rspec request tests with selenium
-
-    $> bundle exec rake scene
-
-Installed Firefox web browser is needed!
-
-## Run all tests in once
-
-    $> bundle exec rake
-
 
