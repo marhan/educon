@@ -21,7 +21,8 @@ gem "coffee-rails", "~> 3.2.1", :group => :assets
 gem "uglifier", "~> 1.0.3",:group => :assets
 
 gem "pg", "~> 0.11.0", :group => :production
-gem "therubyracer", :group => :production
+#gem "therubyracer", :group => :production
+gem "thin",:group => :production
 
 gem "heroku", :group => :development
 gem "haml-rails", :group => :development
